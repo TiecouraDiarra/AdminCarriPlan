@@ -425,18 +425,30 @@
   <c-col xs="4" lg="6">
     <c-card class="mb-4">
       <c-card-header>
-        <c-row>
+        <div class="row">
+          <div class="col-md-4" style="font-weight: bold;">Niveau Parcours</div>
+          <div class="col-md-8">
+            <div class="input-group">
+              <input [(ngModel)]="searchText1" type="search" class="form-control rounded" placeholder="Rechercher..."
+                aria-label="Search" aria-describedby="search-addon" />
+              <button type="button" class="btn btn-outline-primary ttt">Rechercher</button>
+            </div>
+          </div>
+        </div>
+        <!-- <c-row>
           <c-col>
             Niveau Parcours
           </c-col>
           <c-col>
-            <div class="search-one">
-              <i class="bi bi-search sear"></i>
-              <input id="search" class="reche" type="search" placeholder="Rechercher..." [(ngModel)]="searchText1" autofocus required />
-              <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
+            <div class="col-md-6 ">
+              <div class="input-group">
+                <input [(ngModel)]="searchText1" type="search" class="form-control rounded" placeholder="Rechercher..."
+                  aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-primary ttt">Rechercher</button>
+              </div>
             </div>
           </c-col>
-        </c-row>
+        </c-row> -->
       </c-card-header>
       <c-card-body>
         <table cTable>
