@@ -479,7 +479,17 @@
   <c-col xs="4" lg="6">
     <c-card class="mb-4">
       <c-card-header>
-        <c-row>
+        <div class="row">
+          <div class="col-md-4" style="font-weight: bold;">Types de questions</div>
+          <div class="col-md-8">
+            <div class="input-group">
+              <input [(ngModel)]="searchText2" type="search" class="form-control rounded" placeholder="Rechercher..."
+                aria-label="Search" aria-describedby="search-addon" />
+              <button type="button" class="btn btn-outline-primary ttt">Rechercher</button>
+            </div>
+          </div>
+        </div>
+        <!-- <c-row>
           <c-col>
             Types de questions
           </c-col>
@@ -487,10 +497,9 @@
             <div class="search-one">
               <i class="bi bi-search sear"></i>
               <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText2" autofocus required />
-              <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
             </div>
           </c-col>
-        </c-row>
+        </c-row> -->
       </c-card-header>
       <c-card-body>
         <table cTable>
@@ -523,7 +532,17 @@
       <c-col xs>
         <c-card class="mb-4">
           <c-card-header>
-            <c-row>
+            <div class="row">
+              <div class="col-md-4" style="font-weight: bold;">Type de matières</div>
+              <div class="col-md-8">
+                <div class="input-group">
+                  <input [(ngModel)]="searchText3" type="search" class="form-control rounded" placeholder="Rechercher..."
+                    aria-label="Search" aria-describedby="search-addon" />
+                  <button type="button" class="btn btn-outline-primary ttt">Rechercher</button>
+                </div>
+              </div>
+            </div>
+            <!-- <c-row>
               <c-col>
                 Type de matières
               </c-col>
@@ -531,10 +550,9 @@
                 <div class="search-one">
                   <i class="bi bi-search sear"></i>
                   <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText3" autofocus required />
-                  <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
                 </div>
               </c-col>
-            </c-row>
+            </c-row> -->
             
           </c-card-header>
           <c-card-body>
@@ -570,7 +588,17 @@
       <c-col xs>
         <c-card class="mb-4">
           <c-card-header>
-            <c-row>
+            <div class="row">
+              <div class="col-md-4" style="font-weight: bold;">Les séries du lycée</div>
+              <div class="col-md-8">
+                <div class="input-group">
+                  <input [(ngModel)]="searchText4" type="search" class="form-control rounded" placeholder="Rechercher..."
+                    aria-label="Search" aria-describedby="search-addon" />
+                  <button type="button" class="btn btn-outline-primary ttt">Rechercher</button>
+                </div>
+              </div>
+            </div>
+            <!-- <c-row>
               <c-col>
                 Les séries du lycée
               </c-col>
@@ -578,10 +606,9 @@
                 <div class="search-one">
                   <i class="bi bi-search sear"></i>
                   <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText4" autofocus required />
-                  <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
                 </div>
               </c-col>
-            </c-row>
+            </c-row> -->
             
           </c-card-header>
           <c-card-body>
@@ -617,7 +644,17 @@
       <c-col xs>
         <c-card class="mb-4">
           <c-card-header>
-            <c-row>
+            <div class="row">
+              <div class="col-md-4" style="font-weight: bold;">Les domaines du professionnel</div>
+              <div class="col-md-8">
+                <div class="input-group">
+                  <input [(ngModel)]="searchText5" type="search" class="form-control rounded" placeholder="Rechercher..."
+                    aria-label="Search" aria-describedby="search-addon" />
+                  <button type="button" class="btn btn-outline-primary ttt">Rechercher</button>
+                </div>
+              </div>
+            </div>
+            <!-- <c-row>
               <c-col>
                 Les domaines du professionnel
               </c-col>
@@ -625,10 +662,9 @@
                 <div class="search-one">
                   <i class="bi bi-search sear"></i>
                   <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText5" autofocus required />
-                  <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
                 </div>
               </c-col>
-            </c-row>
+            </c-row> -->
             
           </c-card-header>
           <c-card-body>
