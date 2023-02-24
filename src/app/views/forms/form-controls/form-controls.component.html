@@ -1,0 +1,338 @@
+<!-- <c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <app-docs-callout href="forms/form-control" name="Form Control"></app-docs-callout>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Form Control</strong>
+      </c-card-header>
+      <c-card-body>
+        <app-docs-example href="forms/form-control">
+          <form cForm>
+            <div class="mb-3">
+              <label cLabel for="exampleFormControlInput1">Email address</label>
+              <input cFormControl
+                     id="exampleFormControlInput1"
+                     placeholder="name@example.com"
+                     type="email"
+              />
+            </div>
+            <div class="mb-3">
+              <label cLabel for="exampleFormControlTextarea1">Example textarea</label>
+              <textarea cFormControl id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </form>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Form Control</strong> <small>Sizing</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Set heights using <code>sizing</code> property like <code>sizing=&#34;lg&#34;</code> and
+          <code>sizing=&#34;sm&#34;</code>.
+        </p>
+        <app-docs-example href="forms/form-control#sizing">
+          <input aria-label="lg input example"
+                 cFormControl
+                 placeholder="Large input"
+                 sizing="lg"
+                 type="text"
+          />
+          <br />
+          <input aria-label="default input example"
+                 cFormControl
+                 placeholder="Default input"
+                 type="text"
+          />
+          <br />
+          <input aria-label="sm input example"
+                 cFormControl
+                 placeholder="Small input"
+                 sizing="sm"
+                 type="text"
+          />
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Form Control</strong> <small>Disabled</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Add the <code>disabled</code> boolean attribute on an input to give it a grayed out
+          appearance and remove pointer events.
+        </p>
+        <app-docs-example href="forms/form-control#disabled">
+          <input aria-label="Disabled input example"
+                 cFormControl
+                 disabled
+                 placeholder="Disabled input"
+                 type="text"
+          />
+          <br />
+          <input aria-label="Disabled input example"
+                 cFormControl
+                 disabled
+                 placeholder="Disabled readonly input"
+                 readOnly
+                 type="text"
+          />
+          <br />
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Form Control</strong> <small>Readonly</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Add the <code>readOnly</code> boolean attribute on an input to prevent modification of
+          the input&#39;s value. Read-only inputs appear lighter (just like disabled inputs),
+          but retain the standard cursor.
+        </p>
+        <app-docs-example href="forms/form-control#readonly">
+          <input aria-label="readonly input example"
+                 cFormControl
+                 placeholder="Readonly input here..."
+                 readOnly
+                 type="text"
+          />
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Form Control</strong> <small>Readonly plain text</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          If you want to have <code>&lt;input readonly&gt;</code> elements in your form styled
+          as plain text, use the <code>plainText</code> boolean property to remove the default
+          form field styling and preserve the correct margin and padding.
+        </p>
+        <app-docs-example href="forms/form-control#readonly">
+          <c-row class="mb-3">
+            <label cLabel class="col-sm-2 col-form-label" for="staticEmail">
+              Email
+            </label>
+            <div class="col-sm-10">
+              <input [plaintext]="true"
+                     cFormControl
+                     id="staticEmail"
+                     readonly
+                     type="text"
+                     value="email@example.com"
+              />
+            </div>
+          </c-row>
+          <c-row class="mb-3">
+            <label cLabel class="col-sm-2 col-form-label" for="inputPassword">
+              Password
+            </label>
+            <div class="col-sm-10">
+              <input cFormControl id="inputPassword" type="password" />
+            </div>
+          </c-row>
+        </app-docs-example>
+        <app-docs-example href="forms/form-control#readonly">
+          <form cForm class="row g-3">
+            <div class="col-auto">
+              <label cLabel class="visually-hidden" for="staticEmail2">
+                Email
+              </label>
+              <input [plaintext]="true"
+                     cFormControl
+                     id="staticEmail2"
+                     readonly
+                     type="text"
+                     value="email@example.com"
+              />
+            </div>
+            <div class="col-auto">
+              <label cLabel class="visually-hidden" for="inputPassword2">
+                Password
+              </label>
+              <input cFormControl id="inputPassword2" placeholder="Password" type="password" />
+            </div>
+            <div class="col-auto">
+              <button cButton class="mb-3" type="submit">
+                Confirm identity
+              </button>
+            </div>
+          </form>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Form Control</strong> <small>File input</small>
+      </c-card-header>
+      <c-card-body>
+        <app-docs-example href="forms/form-control#file-input">
+          <div class="mb-3">
+            <label cLabel for="formFile">Default file input example</label>
+            <input cFormControl id="formFile" type="file" />
+          </div>
+          <div class="mb-3">
+            <label cLabel for="formFileMultiple">Multiple files input example</label>
+            <input cFormControl id="formFileMultiple" multiple type="file" />
+          </div>
+          <div class="mb-3">
+            <label cLabel for="formFileDisabled">Disabled file input example</label>
+            <input cFormControl disabled id="formFileDisabled" type="file" />
+          </div>
+          <div class="mb-3">
+            <label cLabel for="formFileSm">Small file input example</label>
+            <input cFormControl id="formFileSm" sizing="sm" type="file" />
+          </div>
+          <div>
+            <label cLabel for="formFileLg">Large file input example</label>
+            <input cFormControl id="formFileLg" sizing="lg" type="file" />
+          </div>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Form Control</strong> <small>Color</small>
+      </c-card-header>
+      <c-card-body>
+        <app-docs-example href="forms/form-control#color">
+          <c-row class="align-items-center g-2">
+            <c-col xs="auto">
+              <label cLabel="col" for="exampleColorInput">Color picker</label>
+            </c-col>
+            <c-col xs="auto">
+              <input [(ngModel)]="favoriteColor"
+                     cFormControl
+                     id="exampleColorInput"
+                     title="Choose your color"
+                     type="color">
+            </c-col>
+            <c-col xs="auto">
+              <div [ngStyle]="{'backgroundColor': favoriteColor}" class="color-box p-1 m-1"></div>
+            </c-col>
+            <c-col xs="auto">
+              <strong>{{favoriteColor}}</strong>
+            </c-col>
+          </c-row>        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row> -->
+
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <c-callout class="bg-white:dark:bg-transparent" color="info">
+      <ng-container *ngTemplateOutlet="default"></ng-container>
+    </c-callout>
+
+    <ng-template #default>
+      <h3 style="text-align: center; font-weight: bold;">La liste des Auto-évaluations({{nombreautoevaluation}})</h3>
+      <!-- <ng-container *ngTemplateOutlet="AjParcous"></ng-container> -->
+    </ng-template>
+
+    <!-- <app-docs-callout href="components/card" name="Card"></app-docs-callout> -->
+  </c-col>
+</c-row>
+<!-- <c-row class="rowbto">
+  <c-col class="colbtn">
+    <ng-container *ngTemplateOutlet="AjAdmin"></ng-container>
+  </c-col>
+</c-row> -->
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <!-- <div class="row">
+          <div class="c-col">
+            <div class="search-one">
+              <i class="bi bi-search sear"></i>
+              <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText"
+                autofocus required />
+            </div>
+          </div>
+        </div> -->
+        <div class="container py-3 mt-4">
+          <div class="row">
+            <div class="col-md-3">
+              <select class="form-select" aria-label="Filtrer" name="textFiltree" [(ngModel)]="searchText">
+                <label for="filtre" class="text-dark">Filtrer</label>
+                <option value="" selected>Tout</option>
+                <option>ROLE_ELEVE</option>
+                <option>ROLE_ETUDIANT</option>
+                <option>ROLE_PROFESSIONNEL</option>
+                <!-- <option value="" selected>Tout</option> -->
+                <!-- <option *ngFor="let Role of role" [value]="Role.name">
+                  {{Role.name}}</option> -->
+              </select>
+            </div>
+
+            <div class="col-md-6 ">
+              <div class="input-group">
+                <input [(ngModel)]="searchText" type="search" class="form-control rounded" placeholder="Rechercher..."
+                  aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-primary ttt">Rechercher</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </c-card-header>
+      <c-card-body>
+        <!-- <app-docs-example href="components/table"> -->
+        <table cTable>
+          <thead style="text-align: center;">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date</th>
+              <th scope="col">Utilisateurs</th>
+              <th scope="col">Role</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody style="text-align: center;"
+            *ngFor="let Autoevaluation of autoevaluation | filter:searchText | paginate:{itemsPerPage :7, currentPage:p} , let i = index ">
+            <tr>
+              <th scope="row">{{i+1}}</th>
+              <td>{{Autoevaluation.dateauto | date:"dd/MM/yyyy hh:mm"}}</td>
+              <td>{{Autoevaluation.utilisateur.nomcomplet}}</td>
+              <td>{{Autoevaluation.utilisateur.roles[0].name}}</td>
+              <td>
+                <div class="lesiconscrud">
+                  <a (click)="goToDettailAuto(Autoevaluation.id)" class="btn btn-outline-primary" title="Details"><i
+                      class="bi bi-eye"></i></a>
+                  <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                  <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerAuto(Autoevaluation.id)"
+                    title="Supprimer"><i class="bi bi-trash3"></i></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event" previousLabel="Retour" nextLabel="Suivant"
+          class="pagination"></pagination-controls>
+        <!-- </app-docs-example> -->
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>

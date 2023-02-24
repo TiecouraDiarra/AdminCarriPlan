@@ -1,0 +1,69 @@
+.pagination {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.lesiconscrud {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-one {
+  display: flex;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  border-radius: 5px;
+  // margin-left: 30px;
+  // margin-right: 30px;
+  margin-bottom: 10px;
+  // margin-top: 20px;
+}
+
+.sear {
+  font-size: 20px;
+  color: rgb(131, 130, 130);
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-left: 5px;
+}
+
+.reche {
+  // font-size: 15px;
+  // border-radius: 5px;
+  // width: 93%;
+  // margin: auto;
+  height: var(--height);
+  font-family: var(--font-fam);
+  border: 0;
+  color: var(--color-dark);
+  font-size: 1.0rem;
+}
+
+.reche[type="search"] {
+  outline: 0; // <-- shold probably remove this for better accessibility, adding for demo aesthetics for now.
+  width: 100%;
+  background: var(--color-light);
+  // padding: 0 1.6rem;
+  border-radius: var(--rad);
+  appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
+  transition: all var(--dur) var(--bez);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+
+.reche:not(:placeholder-shown) {
+  border-radius: var(--rad) 0 0 var(--rad);
+  width: calc(100% - var(--btn-width));
+}
+
+.btnnn{
+  background-color: #00A5E4;
+  color: white;
+  border: none;
+}
+
+c-card-header c-col{
+  font-weight: bold;
+}

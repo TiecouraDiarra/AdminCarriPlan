@@ -1,0 +1,212 @@
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <c-callout class="bg-white:dark:bg-transparent" color="info">
+      <ng-container *ngTemplateOutlet="default"></ng-container>
+    </c-callout>
+    
+    <ng-template #default >
+      <h3 style="text-align: center; font-weight: bold;">La liste des parcours({{nombreparcours}})</h3>
+      <!-- <ng-container *ngTemplateOutlet="AjParcous"></ng-container> -->
+    </ng-template>
+    
+    <!-- <app-docs-callout href="components/card" name="Card"></app-docs-callout> -->
+  </c-col>
+</c-row>
+
+<!-- <c-row class="rowbto">
+  <c-col class="colbtn">
+    <ng-container *ngTemplateOutlet="AjParcous"></ng-container>
+  </c-col>
+</c-row> -->
+
+<c-row>
+  <c-card class="mb-4">
+    <c-card-header>
+      <!-- <c-row>
+        <c-col>
+          <div class="search-one">
+            <i class="bi bi-search sear"></i>
+            <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText" autofocus required />
+          </div>
+        </c-col>
+      </c-row> -->
+      <div class="container py-3 mt-4">
+        <div class="row">
+          <div class="col-md-3">
+            <select class="form-select" aria-label="Filtrer" name="textFiltree" [(ngModel)]="searchText">
+              <label for="filtre" class="text-dark">Filtrer</label>
+              <option value="" selected>Tout</option>
+              <option *ngFor="let Nive of niveauparcours" [value]="Nive.nomniveau">{{Nive.nomniveau}}</option>
+            </select>
+          </div>
+
+          <div class="col-md-6 ">
+            <div class="input-group">
+              <input [(ngModel)]="searchText" type="search" class="form-control rounded" placeholder="Rechercher..."
+                aria-label="Search" aria-describedby="search-addon" />
+              <button type="button" class="btn btn-outline-primary ttt">Rechercher</button>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <ng-container *ngTemplateOutlet="AjParcous"></ng-container>
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              style="width: 100%;background: #00A5E4;border: none; color: white;">
+              Ajouter un Admin
+            </button> -->
+          </div>
+        </div>
+      </div>
+
+    </c-card-header>
+    <c-card-body>
+      <c-row>
+        <c-col xs="3" style="margin-bottom: 20px;" *ngFor="let Parcours of parcours | filter:searchText | paginate:{itemsPerPage :8, currentPage:p}">
+          <div class="card" style="margin-bottom: 10px;width: 18rem; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url({{image}}parcours/{{Parcours.imageparcours}}); object-fit: fill !important; width: 100%; height: 140px;">
+            <!-- <img class="card-img-top" src="{{image}}parcours/{{Parcours.imageparcours}}" alt="Card image cap" style="height: 140px;"> -->
+            <div class="card-body">
+              <h5 class="card-title" style="color: white; text-align: center; margin-top: 13%;">{{Parcours.nomparcours}}</h5>
+              <!-- <p class="card-text" style="text-align: justify;">{{Parcours.description?.substring(0, 30)}}</p> -->
+            </div>
+          </div>
+          <div class="lesiconscrud">
+            <a (click)="goToDettailParcours(Parcours.id)" class="btn btn-outline-primary"
+              title="DetailsParcours"><i class="bi bi-eye"></i></a>
+            <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+            <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerParcours(Parcours.id)" title="Supprimer la region"><i class="bi bi-trash3"></i></a>
+          </div>
+        </c-col>
+        <!-- <c-col xs="3" *ngFor="let Parcours of parcours | paginate:{itemsPerPage :4, currentPage:p} | filter:searchText">
+          <c-card style="width: 18rem;" class="mb-4">
+            <img src="{{image}}parcours/{{Parcours.imageparcours}}" alt="">
+            <c-card-body>
+              <h5 cCardTitle style="text-align: center;">{{Parcours.nomparcours}}</h5>
+              <p cCardText>
+                {{Parcours.description}}
+              </p>
+              <div class="lesiconscrud">
+                <a (click)="goToDettailParcours(Parcours.id)" class="btn btn-outline-primary"
+                  title="DetailsParcours"><i class="bi bi-eye"></i></a>
+                <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerParcours(Parcours.id)" title="Supprimer la region"><i class="bi bi-trash3"></i></a>
+              </div>
+            </c-card-body>
+          </c-card>
+        </c-col> -->
+      </c-row>
+      <pagination-controls (pageChange)="p = $event" previousLabel="Précédent"
+          nextLabel="Suivant" class="pagination"></pagination-controls>
+
+      <!-- </app-docs-example> -->
+    </c-card-body>
+  </c-card>
+</c-row>
+
+
+<ng-template #imgPlaceholderTemplate let-orientation>
+  
+  <!-- <svg [cCardImg]="orientation ?? 'top'" aria-label="Placeholder: Image cap" class="docs-placeholder-img"
+    focusable="false" height="180" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
+    xmlns="http://www.w3.org/2000/svg">
+    <title>Placeholder</title>
+    <rect fill="#868e96" height="100%" width="100%"></rect>
+    <text dominant-baseline="middle" dy=".3em" fill="#dee2e6" text-anchor="middle" x="50%" y="50%">Image cap</text>
+  </svg> -->
+</ng-template>
+
+<!-- <ng-template #cardBodyTemplate>
+  <h5 cCardTitle>Card title</h5>
+  <p cCardText>
+    Some quick example text to build on the card title and make up the bulk of the card's content.
+  </p>
+  <button cButton color="primary">Go somewhere</button>
+</ng-template> -->
+
+<!-- POPUP AJOUTER PARCOURS -->
+<ng-template #AjParcous>
+  <button (click)="toggleAjoutParcours()" type="button" class="btn" style="width: 100%;background: #00A5E4;border: none; color: white;">Ajouter un Parcours</button>
+  <!-- <button (click)="toggleLiveDemo1()" cButton>Ajouter Niveau Parcours</button> -->
+  <c-modal id="liveDemoModal" [visible]="AjoutParcoursVisible" (visibleChange)="handleAjoutParcoursChange($event)">
+    <c-modal-header>
+      <h5 cModalTitle>Ajouter un Parcours</h5>
+      <button (click)="toggleAjoutParcours()" cButtonClose></button>
+    </c-modal-header>
+    <form>
+      <c-modal-body>
+        <div class="row">
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input name="nomparcours" [(ngModel)]="ParcooursForm.nomparcours" class="form-control" id="floatingInput" placeholder="Nom du parcours">
+              <label for="floatingInput">Nom du parcours</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input name="titre" [(ngModel)]="ParcooursForm.titre" class="form-control" id="floatingInput" placeholder="Titre">
+              <label for="floatingInput">Titre</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input name="type" [(ngModel)]="ParcooursForm.type" class="form-control" id="floatingInput" placeholder="Type">
+              <label for="floatingInput">Type</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input name="filiere" [(ngModel)]="ParcooursForm.filiere" class="form-control" id="floatingInput" placeholder="Filière">
+              <label for="floatingInput">Filière</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input name="duree" [(ngModel)]="ParcooursForm.duree" class="form-control" id="floatingInput" placeholder="Durée">
+              <label for="floatingInput">Durée</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input name="admission" [(ngModel)]="ParcooursForm.admission" class="form-control" id="floatingInput" placeholder="Admission">
+              <label for="floatingInput">Admission</label>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom: 13px;">
+          <div class="form-floating">
+            <textarea name="description" [(ngModel)]="ParcooursForm.description" class="form-control" placeholder="Description du parcours" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label style="margin-left: 10px;" for="floatingTextarea2">Description du parcours</label>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom: 13px;">
+          <div class="form-floating">
+            <textarea name="conseil" [(ngModel)]="ParcooursForm.conseil" class="form-control" placeholder="Conseil" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label style="margin-left: 10px;" for="floatingTextarea2">Conseil</label>
+          </div>
+        </div>
+        <div class="row" style="margin-left: 3px; margin-right: 3px;margin-bottom: 13px;">
+          <!-- <input cFormControl id="formFile" type="file" /> -->
+          <input name="imageparcours" (change)="chargeImg($event)" class="form-control form-control-sm" id="formFileLg" type="file" />
+        </div>
+        <div class="row" style="margin-left: 3px; margin-right: 3px;margin-bottom: 13px;">
+          <select class="form-select" aria-label="Default select example" name="id" [(ngModel)]="niveau">
+            <option selected>Selectionner le niveau</option>
+            <option *ngFor="let Niveauparcours of niveauparcours" value="{{Niveauparcours.id}}">{{Niveauparcours.nomniveau}}</option>
+          </select>
+        </div>
+      </c-modal-body>
+      <!-- <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Création annulée !<br />{{ errorMessage }}
+      </div> -->
+      <c-modal-footer>
+        <button (click)="toggleAjoutParcours()" cButton color="secondary">
+          Retour
+        </button>
+        <button cButton (click)="AjouterParcours()" class="btnnn">Enregistrer</button>
+        
+      </c-modal-footer>
+    </form>
+  </c-modal>
+</ng-template>

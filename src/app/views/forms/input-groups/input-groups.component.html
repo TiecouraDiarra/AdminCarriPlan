@@ -1,0 +1,1545 @@
+<!-- <c-row>
+  <c-col xs="12">
+    <app-docs-callout href="forms/input-group" name="Input Group"></app-docs-callout>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Basic example</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Place one add-on or button on either side of an input. You may also place one on both
+          sides of an input. Remember to place <code>&lt;label&gt;</code>s outside the
+          input group.
+        </p>
+        <app-docs-example href="forms/input-group">
+          <c-input-group class="mb-3">
+            <span cInputGroupText id="basic-addon1">@</span>
+            <input aria-describedby="basic-addon1"
+                   aria-label="Username"
+                   cFormControl
+                   placeholder="Username"
+            />
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <input aria-describedby="basic-addon2"
+                   aria-label="Recipient&#39;s username"
+                   cFormControl
+                   placeholder="Recipient&#39;s username"
+            />
+            <span cInputGroupText id="basic-addon2">@example.com</span>
+          </c-input-group>
+          <label cLabel for="basic-url">Your vanity URL</label>
+          <c-input-group class="mb-3">
+            <span cInputGroupText id="basic-addon3">https://example.com/users/</span>
+            <input aria-describedby="basic-addon3" cFormControl id="basic-url"/>
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <span cInputGroupText>$</span>
+            <input aria-label="Amount (to the nearest dollar)" cFormControl/>
+            <span cInputGroupText>.00</span>
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <input aria-label="Username" cFormControl placeholder="Username"/>
+            <span cInputGroupText>@</span>
+            <input aria-label="Server" cFormControl placeholder="Server"/>
+          </c-input-group>
+          <c-input-group>
+            <span cInputGroupText>With textarea</span>
+            <textarea aria-label="With textarea" cFormControl></textarea>
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Wrapping</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Input groups wrap by default via <code>flex-wrap: wrap</code> in order to accommodate
+          custom form field validation within an input group. You may disable this with
+          <code>.flex-nowrap</code>.
+        </p>
+        <app-docs-example href="forms/input-group#wrapping">
+          <c-input-group class="flex-nowrap">
+            <span cInputGroupText id="addon-wrapping">@</span>
+            <input aria-describedby="addon-wrapping"
+                   aria-label="Username"
+                   cFormControl
+                   placeholder="Username"
+            />
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Sizing</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Add the relative form sizing classes to the <code>&lt;c-input-group&gt;</code> itself
+          and contents within will automatically resize—no need for repeating the form control
+          size classes on each element.
+        </p>
+        <p class="text-medium-emphasis small">
+          <strong>Sizing on the individual input group elements isn&#39;t supported.</strong>
+        </p>
+        <app-docs-example href="forms/input-group#sizing">
+          <c-input-group class="mb-3" sizing="sm">
+            <span cInputGroupText id="inputGroup-sizing-sm">Small</span>
+            <input aria-describedby="inputGroup-sizing-sm"
+                   aria-label="Sizing example input"
+                   cFormControl
+            />
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <span cInputGroupText id="inputGroup-sizing-default">Default</span>
+            <input aria-describedby="inputGroup-sizing-default"
+                   aria-label="Sizing example input"
+                   cFormControl
+            />
+          </c-input-group>
+          <c-input-group sizing="lg">
+            <span cInputGroupText id="inputGroup-sizing-lg">Large</span>
+            <input aria-describedby="inputGroup-sizing-lg"
+                   aria-label="Sizing example input"
+                   cFormControl
+            />
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Checkboxes and radios</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Place any checkbox or radio option within an input group&#39;s addon instead of text.
+        </p>
+        <app-docs-example href="forms/input-group#checkboxes-and-radios">
+          <c-input-group class="mb-3">
+            <span cInputGroupText>
+              <div>
+                <input cFormCheckInput id="checkOne" type="checkbox"/>
+              </div>
+            </span>
+            <input aria-label="Text input with checkbox" cFormControl/>
+          </c-input-group>
+          <c-input-group>
+            <span cInputGroupText>
+              <div>
+                <input cFormCheckInput id="radioOne" type="radio"/>
+              </div>
+            </span>
+            <input aria-label="Text input with radio button" cFormControl/>
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Multiple inputs</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          While multiple <code>&lt;CFormInput&gt;</code>s are supported visually, validation
+          styles are only available for input groups with a single
+          <code>cFormControl</code>.
+        </p>
+        <app-docs-example href="forms/input-group#multiple-inputs">
+          <c-input-group>
+            <span cInputGroupText>First and last name</span>
+            <input aria-label="First name" cFormControl/>
+            <input aria-label="Last name" cFormControl/>
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Multiple addons</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Multiple add-ons are supported and can be mixed with checkbox and radio input
+          versions..
+        </p>
+        <app-docs-example href="forms/input-group#multiple-addons">
+          <c-input-group class="mb-3">
+            <span cInputGroupText>$</span>
+            <span cInputGroupText>0.00</span>
+            <input aria-label="Dollar amount (with dot and two decimal places)" cFormControl/>
+          </c-input-group>
+          <c-input-group>
+            <input aria-label="Dollar amount (with dot and two decimal places)" cFormControl/>
+            <span cInputGroupText>$</span>
+            <span cInputGroupText>0.00</span>
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Button addons</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Button add-ons are supported.
+        </p>
+        <app-docs-example href="forms/input-group#button-addons">
+          <c-input-group class="mb-3">
+            <button cButton color="secondary" id="button-addon1" type="button" variant="outline">
+              Button
+            </button>
+            <input aria-describedby="button-addon1"
+                   aria-label="Example text with button addon"
+                   cFormControl
+                   placeholder=""
+            />
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <input aria-describedby="button-addon2"
+                   aria-label="Recipient's username"
+                   cFormControl
+                   placeholder="Recipient's username"
+            />
+            <button cButton color="secondary" id="button-addon2" type="button" variant="outline">
+              Button
+            </button>
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <button cButton color="secondary" type="button" variant="outline">
+              Button
+            </button>
+            <button cButton color="secondary" type="button" variant="outline">
+              Button
+            </button>
+            <input aria-label="Example text with two button addons" cFormControl placeholder=""/>
+          </c-input-group>
+          <c-input-group>
+            <input aria-label="Recipient's username with two button addons"
+                   cFormControl
+                   placeholder="Recipient's username"
+            />
+            <button cButton color="secondary" type="button" variant="outline">
+              Button
+            </button>
+            <button cButton color="secondary" type="button" variant="outline">
+              Button
+            </button>
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Buttons with dropdowns</small>
+      </c-card-header>
+      <c-card-body>
+        <app-docs-example href="forms/input-group#buttons-with-dropdowns">
+          <c-input-group class="mb-3">
+            <c-dropdown>
+              <button cButton cDropdownToggle color="secondary" variant="outline">
+                Dropdown
+              </button>
+              <ul cDropdownMenu>
+                <li><a routerLink="./" cDropdownItem>Action</a></li>
+                <li><a routerLink="./" cDropdownItem>Another action</a></li>
+                <li><a routerLink="./" cDropdownItem>Something else here</a></li>
+                <li>
+                  <hr cDropdownDivider>
+                </li>
+                <li><a routerLink="./" cDropdownItem>Separated link</a></li>
+              </ul>
+            </c-dropdown>
+            <input aria-label="Text input with dropdown button" cFormControl/>
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <input aria-label="Text input with dropdown button" cFormControl/>
+            <c-dropdown alignment="end">
+              <button cButton cDropdownToggle color="secondary" variant="outline">
+                Dropdown
+              </button>
+              <ul cDropdownMenu>
+                <li><a routerLink="./" cDropdownItem>Action</a></li>
+                <li><a routerLink="./" cDropdownItem>Another action</a></li>
+                <li><a routerLink="./" cDropdownItem>Something else here</a></li>
+                <li>
+                  <hr cDropdownDivider>
+                </li>
+                <li><a routerLink="./" cDropdownItem>Separated link</a></li>
+              </ul>
+            </c-dropdown>
+          </c-input-group>
+          <c-input-group>
+            <c-dropdown>
+              <button cButton cDropdownToggle color="secondary" variant="outline">
+                Dropdown
+              </button>
+              <ul cDropdownMenu>
+                <li><a routerLink="./" cDropdownItem>Action</a></li>
+                <li><a routerLink="./" cDropdownItem>Another action</a></li>
+                <li><a routerLink="./" cDropdownItem>Something else here</a></li>
+                <li>
+                  <hr cDropdownDivider>
+                </li>
+                <li><a routerLink="./" cDropdownItem>Separated link</a></li>
+              </ul>
+            </c-dropdown>
+            <input aria-label="Text input with 2 dropdown buttons" cFormControl/>
+            <c-dropdown alignment="end">
+              <button cButton cDropdownToggle color="secondary" variant="outline">
+                Dropdown
+              </button>
+              <ul cDropdownMenu>
+                <li><a routerLink="./" cDropdownItem>Other Action</a></li>
+                <li><a routerLink="./" cDropdownItem>Another action</a></li>
+                <li><a routerLink="./" cDropdownItem>Something else here</a></li>
+                <li>
+                  <hr cDropdownDivider>
+                </li>
+                <li><a routerLink="./" cDropdownItem>Separated link</a></li>
+              </ul>
+            </c-dropdown>
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Segmented buttons</small>
+      </c-card-header>
+      <c-card-body>
+        <app-docs-example href="forms/input-group#segmented-buttons">
+          <c-input-group class="mb-3">
+            <c-dropdown>
+              <button cButton color="secondary" type="button" variant="outline">
+                Action
+              </button>
+              <button [split]="true" cButton cDropdownToggle color="secondary" variant="outline">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul cDropdownMenu>
+                <li><a routerLink="./" cDropdownItem>Action</a></li>
+                <li><a routerLink="./" cDropdownItem>Another action</a></li>
+                <li><a routerLink="./" cDropdownItem>Something else here</a></li>
+                <li>
+                  <hr cDropdownDivider>
+                </li>
+                <li><a routerLink="./" cDropdownItem>Separated link</a></li>
+              </ul>
+            </c-dropdown>
+            <input aria-label="Text input with segmented dropdown button" cFormControl/>
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <input aria-label="Text input with segmented dropdown button" cFormControl/>
+            <c-dropdown alignment="end">
+              <button cButton color="secondary" variant="outline">
+                Action
+              </button>
+              <button [split]="true" cButton cDropdownToggle color="secondary" variant="outline">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul cDropdownMenu>
+                <li><a routerLink="./" cDropdownItem>Action</a></li>
+                <li><a routerLink="./" cDropdownItem>Another action</a></li>
+                <li><a routerLink="./" cDropdownItem>Something else here</a></li>
+                <li>
+                  <hr cDropdownDivider>
+                </li>
+                <li><a routerLink="./" cDropdownItem>Separated link</a></li>
+              </ul>
+            </c-dropdown>
+          </c-input-group>
+          <c-input-group>
+            <c-dropdown>
+              <button cButton color="secondary" type="button" variant="outline">
+                Action
+              </button>
+              <button [split]="true" cButton cDropdownToggle color="secondary" variant="outline">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul cDropdownMenu>
+                <li><a routerLink="./" cDropdownItem>Action</a></li>
+                <li><a routerLink="./" cDropdownItem>Another action</a></li>
+                <li><a routerLink="./" cDropdownItem>Something else here</a></li>
+                <li>
+                  <hr cDropdownDivider>
+                </li>
+                <li><a routerLink="./" cDropdownItem>Separated link</a></li>
+              </ul>
+            </c-dropdown>
+            <input aria-label="Text input with segmented dropdown button" cFormControl/>
+            <c-dropdown alignment="end">
+              <button cButton color="secondary" variant="outline">
+                Action
+              </button>
+              <button [split]="true" cButton cDropdownToggle color="secondary" variant="outline">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul cDropdownMenu>
+                <li><a routerLink="./" cDropdownItem>Action</a></li>
+                <li><a routerLink="./" cDropdownItem>Another action</a></li>
+                <li><a routerLink="./" cDropdownItem>Something else here</a></li>
+                <li>
+                  <hr cDropdownDivider>
+                </li>
+                <li><a routerLink="./" cDropdownItem>Separated link</a></li>
+              </ul>
+            </c-dropdown>
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Custom select</small>
+      </c-card-header>
+      <c-card-body>
+        <app-docs-example href="forms/input-group#custom-select">
+          <c-input-group class="mb-3">
+            <label cInputGroupText for="inputGroupSelect01">
+              Options
+            </label>
+            <select cSelect id="inputGroupSelect01">
+              <option>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <select cSelect id="inputGroupSelect02">
+              <option>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <label cInputGroupText for="inputGroupSelect02">
+              Options
+            </label>
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <button cButton color="secondary" type="button" variant="outline">
+              Button
+            </button>
+            <select aria-label="Example select with button addon" cSelect id="inputGroupSelect03">
+              <option>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </c-input-group>
+          <c-input-group>
+            <select aria-label="Example select with button addon" cSelect id="inputGroupSelect04">
+              <option>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <button cButton color="secondary" type="button" variant="outline">
+              Button
+            </button>
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Input group</strong> <small>Custom file input</small>
+      </c-card-header>
+      <c-card-body>
+        <app-docs-example href="forms/input-group#custom-file-input">
+          <c-input-group class="mb-3">
+            <label cInputGroupText for="inputGroupFile01">
+              Upload
+            </label>
+            <input cFormControl id="inputGroupFile01" type="file"/>
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <input cFormControl id="inputGroupFile02" type="file"/>
+            <label cInputGroupText for="inputGroupFile02">
+              Upload
+            </label>
+          </c-input-group>
+          <c-input-group class="mb-3">
+            <button cButton
+                    color="secondary"
+                    id="inputGroupFileAddon03"
+                    type="button"
+                    variant="outline"
+            >
+              Button
+            </button>
+            <input aria-describedby="inputGroupFileAddon03"
+                   aria-label="Upload"
+                   cFormControl
+                   id="inputGroupFile03"
+                   type="file"
+            />
+          </c-input-group>
+          <c-input-group>
+            <input aria-describedby="inputGroupFileAddon04"
+                   aria-label="Upload"
+                   cFormControl
+                   id="inputGroupFile04"
+                   type="file"
+            />
+            <button cButton
+                    color="secondary"
+                    id="inputGroupFileAddon04"
+                    type="button"
+                    variant="outline"
+            >
+              Button
+            </button>
+          </c-input-group>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row> -->
+
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <c-callout class="bg-white:dark:bg-transparent" color="info">
+      <ng-container *ngTemplateOutlet="default"></ng-container>
+    </c-callout>
+    <ng-template #default>
+      <p>La liste des étudiant({{nombreetudiant}})</p>
+      <!-- <ng-content></ng-content> -->
+      <!-- <br> -->
+      <!-- For more information please visit our official <a href="{{href}}" target="_blank">documentation of CoreUI Components Library for Angular.</a> -->
+    </ng-template>
+
+    <!-- <app-docs-callout href="components/table" name="Table"></app-docs-callout> -->
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <div class="row">
+          <div class="c-col">
+            <div class="search-one">
+              <i class="bi bi-search sear"></i>
+              <input id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText" autofocus required />
+              <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
+            </div>
+          </div>
+        </div>
+      </c-card-header>
+      <c-card-body>
+          <table cTable>
+            <thead style="text-align: center;">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nom & Prenom</th>
+              <th scope="col">Email</th>
+              <th scope="col">Numéro</th>
+              <th scope="col">Série</th>
+              <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody style="text-align: center;" *ngFor="let Etudiant of etudiant | paginate:{itemsPerPage :7, currentPage:p} | filter:searchText, let i = index ">
+            <tr>
+              <th scope="row">{{i+1}}</th>
+              <td>{{Etudiant.nomcomplet}}</td>
+              <td>{{Etudiant.email}}</td>
+              <td>{{Etudiant.numero}}</td>
+              <td>{{Etudiant.serieLycee.nomserie}}</td>
+              <td>
+                <div class="lesiconscrud">
+                  <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerUser(Etudiant.id)"
+                    title="Supprimer"><i class="bi bi-trash3"></i></a>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <pagination-controls previousLabel="Retour"
+          nextLabel="Suivant" (pageChange)="p = $event" class="pagination"></pagination-controls>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <!-- <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Variants</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Use contextual classes to color tables, table rows or individual cells.
+        </p>
+        <app-docs-example href="components/table#variants">
+          <table cTable>
+            <thead>
+            <tr>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">Default</th>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr cTableColor="primary">
+              <th scope="row">Primary</th>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr cTableColor="secondary">
+              <th scope="row">Secondary</th>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr cTableColor="success">
+              <th scope="row">Success</th>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr cTableColor="danger">
+              <th scope="row">Danger</th>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr cTableColor="warning">
+              <th scope="row">Warning</th>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr cTableColor="info">
+              <th scope="row">Info</th>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr cTableColor="light">
+              <th scope="row">Light</th>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr cTableColor="dark">
+              <th scope="row">Dark</th>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Striped rows</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Use <code>striped</code> property to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.
+        </p>
+        <app-docs-example href="components/table#striped-rows">
+          <table [striped]="true" cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+        <p class="text-medium-emphasis small">
+          These classes can also be added to table variants:
+        </p>
+        <app-docs-example href="components/table#striped-rows">
+          <table [striped]="true" cTable color="dark">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+        <app-docs-example href="components/table#striped-rows">
+          <table [striped]="true" cTable color="success">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Striped columns</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Use <code>stripedColumn</code> property to add zebra-striping to any table column.
+        </p>
+        <app-docs-example href="components/table#striped-columns">
+          <table stripedColumns cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Hoverable rows</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Use <code>[hover]="true"</code> property to enable a hover state on table rows within a
+          <code>&lt;tbody&gt;</code>.
+        </p>
+        <app-docs-example href="components/table#hoverable-rows">
+          <table [hover]="true" cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+        <app-docs-example href="components/table#hoverable-rows">
+          <table [hover]="true" cTable color="dark">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+        <app-docs-example href="components/table#hoverable-rows">
+          <table [hover]="true" [striped]="true" cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Active tables</small>
+      </c-card-header>
+      <c-card-body>
+        <app-docs-example href="components/table#active-tables">
+          <table cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr cTableActive>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td cTableActive colSpan="2">
+                Larry the Bird
+              </td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+        <app-docs-example href="components/table#active-tables">
+          <table cTable color="dark">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr cTableActive>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td cTableActive colSpan="2">
+                Larry the Bird
+              </td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col> -->
+  <!-- <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Bordered tables</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Add <code>bordered</code> property for borders on all sides of the table and cells.
+        </p>
+        <app-docs-example href="components/table#bordered-tables">
+          <table [bordered]="true" cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+        <p class="text-medium-emphasis small">
+          <a href="https://coreui.io/docs/4.0/utilities/borders#border-color">
+            Border color utilities
+          </a> can be added to change colors:
+        </p>
+        <app-docs-example href="components/table#bordered-tables">
+          <table [bordered]="true" [cBorder]="1" borderColor="primary" cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Tables without borders</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Add <code>borderless</code> property for a table without borders.
+        </p>
+        <app-docs-example href="components/table#tables-without-borders">
+          <table [borderless]="true" cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+        <app-docs-example href="components/table#tables-without-borders">
+          <table borderless cTable color="dark">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Small tables</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Add <code>small</code> property to make any <code>cTable</code> more compact
+          by cutting all cell <code>padding</code> in half.
+        </p>
+        <app-docs-example href="components/table#small-tables">
+          <table [small]="true" cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Vertical alignment</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Table cells of <code>&lt;thead&gt;</code> are always vertical aligned to the
+          bottom. Table cells in <code>&lt;tbody&gt;</code> inherit their alignment from
+          <code>cTable</code> and are aligned to the the top by default. Use the align
+          property to re-align where needed.
+        </p>
+        <app-docs-example href="components/table#vertical-alignment">
+          <table [responsive]="true" cAlign="middle" cTable>
+            <thead>
+            <tr>
+              <th class="w-25" scope="col">
+                Heading 1
+              </th>
+              <th class="w-25" scope="col">
+                Heading 2
+              </th>
+              <th class="w-25" scope="col">
+                Heading 3
+              </th>
+              <th class="w-25" scope="col">
+                Heading 4
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                This cell inherits <code>vertical-align: middle;</code> from the table
+              </td>
+              <td>
+                This cell inherits <code>vertical-align: middle;</code> from the table
+              </td>
+              <td>
+                This cell inherits <code>vertical-align: middle;</code> from the table
+              </td>
+              <td>
+                This here is some placeholder text, intended to take up quite a bit of
+                vertical space, to demonstrate how the vertical alignment works in the
+                preceding cells.
+              </td>
+            </tr>
+            <tr cAlign="bottom">
+              <td>
+                This cell inherits <code>vertical-align: bottom;</code> from the table row
+              </td>
+              <td>
+                This cell inherits <code>vertical-align: bottom;</code> from the table row
+              </td>
+              <td>
+                This cell inherits <code>vertical-align: bottom;</code> from the table row
+              </td>
+              <td>
+                This here is some placeholder text, intended to take up quite a bit of
+                vertical space, to demonstrate how the vertical alignment works in the
+                preceding cells.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                This cell inherits <code>vertical-align: middle;</code> from the table
+              </td>
+              <td>
+                This cell inherits <code>vertical-align: middle;</code> from the table
+              </td>
+              <td cAlign="top">This cell is aligned to the top.</td>
+              <td>
+                This here is some placeholder text, intended to take up quite a bit of
+                vertical space, to demonsCTableRowate how the vertical alignment works in the
+                preceding cells.
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Nesting</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Border styles, active styles, and table variants are not inherited by nested tables.
+        </p>
+        <app-docs-example href="components/table#nesting">
+          <table [striped]="true" cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th colSpan="4">
+                <table cTable>
+                  <thead>
+                  <tr>
+                    <th scope="col">Header</th>
+                    <th scope="col">Header</th>
+                    <th scope="col">Header</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <th scope="row">A</th>
+                    <td>First</td>
+                    <td>Last</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">B</th>
+                    <td>First</td>
+                    <td>Last</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">C</th>
+                    <td>First</td>
+                    <td>Last</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </th>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col> -->
+  <!-- <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Table head</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Similar to tables and dark tables, use the modifier prop
+          <code>color=&#34;light&#34;</code> or <code>color=&#34;dark&#34;</code> to make
+          <code>&lt;thead&gt;</code>s appear light or dark gray.
+        </p>
+        <app-docs-example href="components/table#table-head">
+          <table cTable>
+            <thead cTableColor="light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+        <app-docs-example href="components/table#table-head">
+          <table cTable>
+            <thead cTableColor="dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Table foot</small>
+      </c-card-header>
+      <c-card-body>
+        <app-docs-example href="components/table#table-foot">
+          <table cTable>
+            <thead cTableColor="light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <td>Footer</td>
+              <td>Footer</td>
+              <td>Footer</td>
+              <td>Footer</td>
+            </tr>
+            </tfoot>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Table</strong> <small>Captions</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          A <code>&lt;caption&gt;</code> functions like a heading for a table. It helps
+          users with screen readers to find a table and understand what it's about and
+          decide if they want to read it.
+        </p>
+        <app-docs-example href="components/table#captions">
+          <table cTable>
+            <caption>List of users</caption>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+        <p class="text-medium-emphasis small">
+          You can also put the <code>&lt;caption&gt;</code> on the top of the table with
+          <code>caption=&#34;top&#34;</code>.
+        </p>
+        <app-docs-example href="components/table#captions">
+          <table cTable caption="top">
+            <caption>List of users</caption>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col> -->
+</c-row>

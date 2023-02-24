@@ -1,0 +1,245 @@
+<!-- <c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <app-docs-callout href="forms/select" name="Form Select"></app-docs-callout>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Select</strong> <small>Default</small>
+      </c-card-header>
+      <c-card-body>
+        <app-docs-example href="forms/select">
+          <select aria-label="Default select example" cSelect>
+            <option>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Select</strong> <small>Sizing</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          You may also choose from small and large custom selects to match our similarly sized
+          text inputs.
+        </p>
+        <app-docs-example href="forms/select#sizing">
+          <select aria-label="Large select example" cSelect class="mb-3" sizing="lg">
+            <option>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <select aria-label="Small select example" cSelect class="mb-3" sizing="sm">
+            <option>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </app-docs-example>
+        <p class="text-medium-emphasis small">
+          The <code>multiple</code> attribute is also supported:
+        </p>
+        <app-docs-example href="forms/select#sizing">
+          <select aria-label="Multiple select example" cSelect multiple sizing="lg">
+            <option>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </app-docs-example>
+        <p class="text-medium-emphasis small">
+          As is the <code>html size</code> property:
+        </p>
+        <app-docs-example href="forms/select#sizing">
+          <select aria-label="Multiple select example" cSelect multiple size="3" sizing="lg">
+            <option>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+          </select>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Select</strong> <small>Disabled</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Add the <code>disabled</code> boolean attribute on a select to give it a grayed out
+          appearance and remove pointer events.
+        </p>
+        <app-docs-example href="forms/select#disabled">
+          <select aria-label="Disabled select example" cSelect disabled>
+            <option>Open this select menu</option>
+            <option value="1">One</option>
+            <option selected value="2">Selected: Two</option>
+            <option value="3">Three</option>
+          </select>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>
+ -->
+
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <c-callout class="bg-white:dark:bg-transparent" color="info">
+      <ng-container *ngTemplateOutlet="default"></ng-container>
+    </c-callout>
+
+    <ng-template #default>
+      <h3 style="text-align: center; font-weight: bold;">La liste des Questions({{nombrequestion}})</h3>
+      <!-- <ng-container *ngTemplateOutlet="AjParcous"></ng-container> -->
+    </ng-template>
+
+    <!-- <app-docs-callout href="components/card" name="Card"></app-docs-callout> -->
+  </c-col>
+</c-row>
+<!-- <c-row class="rowbto">
+  <c-col class="colbtn">
+    <ng-container *ngTemplateOutlet="AjAdmin"></ng-container>
+  </c-col>
+</c-row> -->
+
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <!-- <div class="row">
+          <div class="c-col">
+            <div class="search-one">
+              <i class="bi bi-search sear"></i>
+              <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText"
+                autofocus required />
+            </div>
+          </div>
+        </div> -->
+
+        <div class="container py-3 mt-4">
+          <div class="row">
+            <div class="col-md-3">
+              <select class="form-select" aria-label="Filtrer" name="textFiltree" [(ngModel)]="searchText">
+                <label for="filtre" class="text-dark">Filtrer</label>
+                <option value="" selected>Tout</option>
+                <option *ngFor="let Typequestion of typequestion" [value]="Typequestion.nomtypequestion">{{Typequestion.nomtypequestion}}</option>
+              </select>
+            </div>
+  
+            <div class="col-md-6 ">
+              <div class="input-group">
+                <input [(ngModel)]="searchText" type="search" class="form-control rounded" placeholder="Rechercher..."
+                  aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-primary ttt">Rechercher</button>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <ng-container *ngTemplateOutlet="AjAdmin"></ng-container>
+              <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                style="width: 100%;background: #00A5E4;border: none; color: white;">
+                Ajouter un Admin
+              </button> -->
+            </div>
+          </div>
+        </div>
+
+      </c-card-header>
+      <c-card-body>
+        <!-- <app-docs-example href="components/table"> -->
+        <table cTable>
+          <thead style="text-align: center;">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Questions</th>
+              <th scope="col">Type de Matière</th>
+              <th scope="col">Type de question</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody style="text-align: center;"
+            *ngFor="let Question of question | filter:searchText| paginate:{itemsPerPage :7, currentPage:p} , let i = index ">
+            <tr>
+              <th scope="row">{{i+1}}</th>
+              <td>{{Question.question}}</td>
+              <td>{{Question.typeMatiere.nomtypematiere}}</td>
+              <td>{{Question.typeQuestion.nomtypequestion}}</td>
+              <td>
+                <div class="lesiconscrud">
+                  <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                  <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerQuestion(Question.id)"
+                    title="Supprimer"><i class="bi bi-trash3"></i></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event" previousLabel="Retour" nextLabel="Suivant"
+          class="pagination"></pagination-controls>
+        <!-- </app-docs-example> -->
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>
+
+
+<!-- POPUP AJOUTER QUESTION -->
+<ng-template #AjAdmin>
+  <button (click)="toggleAjoutAdmin()" type="button" class="btn" style="width: 100%;background: #00A5E4;border: none; color: white;">Ajouter une question</button>
+  <!-- <button (click)="toggleLiveDemo1()" cButton>Ajouter Niveau Parcours</button> -->
+  <c-modal id="liveDemoModal" [visible]="AjoutAdminVisible" (visibleChange)="handleAjoutAdminChange($event)">
+    <c-modal-header>
+      <h5 cModalTitle>Ajouter une question</h5>
+      <button (click)="toggleAjoutAdmin()" cButtonClose></button>
+    </c-modal-header>
+    <form>
+      <c-modal-body>
+        <div class="row">
+          <div class="form-floating mb-3">
+            <input name="question1" [(ngModel)]="QuestionForm.question1" class="form-control" id="floatingInput"
+              placeholder="Question">
+            <label style="margin-left: 10px;" for="floatingInput">Question</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-floating mb-3">
+            <select class="form-select" aria-label="Default select example" name="id" [(ngModel)]="typequestion1">
+              <option selected>Selectionner le type de question</option>
+              <option *ngFor="let Typequestion of typequestion" value="{{Typequestion.id}}">
+                {{Typequestion.nomtypequestion}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-floating mb-3">
+            <select class="form-select" aria-label="Default select example" name="id" [(ngModel)]="typematiere1">
+              <option selected>Selectionner le type de matière</option>
+              <option *ngFor="let Typematiere of typematiere" value="{{Typematiere.id}}">{{Typematiere.nomtypematiere}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </c-modal-body>
+      <!-- <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Création annulée !<br />{{ errorMessage }}
+      </div> -->
+      <c-modal-footer>
+        <button (click)="toggleAjoutAdmin()" cButton color="secondary">
+          Retour
+        </button>
+        <button cButton (click)="AjouterMetiers()" class="btnnn">Enregistrer</button>
+
+      </c-modal-footer>
+    </form>
+  </c-modal>
+</ng-template>

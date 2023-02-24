@@ -1,0 +1,859 @@
+<!-- <c-row>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Layout</strong> <small>Form grid</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          More complex forms can be built using our grid classes. Use these for form layouts
+          that require multiple columns, varied widths, and additional alignment options.
+        </p>
+        <app-docs-example href="forms/layout#form-grid">
+          <c-row>
+            <c-col xs>
+              <input aria-label="First name" cFormControl placeholder="First name" />
+            </c-col>
+            <c-col xs>
+              <input aria-label="Last name" cFormControl placeholder="Last name" />
+            </c-col>
+          </c-row>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Layout</strong> <small>Gutters</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          By adding <a href="https://coreui.io/docs/layout/gutters/">gutter modifier classes</a>
+          , you can have control over the gutter width in as well the inline as block direction.
+        </p>
+        <app-docs-example href="forms/layout#gutters">
+          <c-row class="g-3">
+            <c-col xs>
+              <input aria-label="First name" cFormControl placeholder="First name" />
+            </c-col>
+            <c-col xs>
+              <input aria-label="Last name" cFormControl placeholder="Last name" />
+            </c-col>
+          </c-row>
+        </app-docs-example>
+        <p class="text-medium-emphasis small">
+          More complex layouts can also be created with the grid system.
+        </p>
+        <app-docs-example href="forms/layout#gutters">
+          <form cForm class="row g-3">
+            <c-col md="6">
+              <label cLabel for="inputEmail4">Email</label>
+              <input cFormControl id="inputEmail4" type="email" />
+            </c-col>
+            <c-col md="6">
+              <label cLabel for="inputPassword4">Password</label>
+              <input cFormControl id="inputPassword4" type="password" />
+            </c-col>
+            <c-col xs="12">
+              <label cLabel for="inputAddress">Address</label>
+              <input cFormControl id="inputAddress" placeholder="1234 Main St" />
+            </c-col>
+            <c-col xs="12">
+              <label cLabel for="inputAddress2">Address 2</label>
+              <input cFormControl id="inputAddress2" placeholder="Apartment, studio, or floor" />
+            </c-col>
+            <c-col md="6">
+              <label cLabel for="inputCity">City</label>
+              <input cFormControl id="inputCity" />
+            </c-col>
+            <c-col md="4">
+              <label cLabel for="inputState">State</label>
+              <select cSelect id="inputState">
+                <option>Choose...</option>
+                <option>...</option>
+              </select>
+            </c-col>
+            <c-col md="2">
+              <label cLabel for="inputZip">Zip</label>
+              <input cFormControl id="inputZip" />
+            </c-col>
+            <c-col xs="12">
+              <c-form-check>
+                <input cFormCheckInput id="gridCheck" name="gridCheck" type="checkbox" />
+                <label cFormCheckLabel for="gridCheck">Check me out</label>
+              </c-form-check>
+            </c-col>
+            <c-col xs="12">
+              <button cButton type="submit">Sign in</button>
+            </c-col>
+          </form>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Layout</strong> <small>Horizontal form</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Create horizontal forms with the grid by adding the <code>.row</code> class to form
+          groups and using the <code>.col-*-*</code> classes to specify the width of your labels
+          and controls. Be sure to add <code>.col-form-label</code> to your
+          <code>&lt;label&gt;</code>s as well so they&#39;re vertically centered with their
+          associated form controls.
+        </p>
+        <p class="text-medium-emphasis small">
+          At times, you maybe need to use margin or padding utilities to create that perfect
+          alignment you need. For example, we&#39;ve removed the <code>padding-top</code> on our
+          stacked radio inputs label to better align the text baseline.
+        </p>
+        <app-docs-example href="forms/layout#horizontal-form">
+          <form>
+            <c-row class="mb-3">
+              <label cLabel class="col-sm-2 col-form-label" for="inputEmail3">
+                Email
+              </label>
+              <c-col sm="10">
+                <input cFormControl id="inputEmail3" type="email" />
+              </c-col>
+            </c-row>
+            <c-row class="mb-3">
+              <label cLabel class="col-sm-2 col-form-label" for="inputPassword3">
+                Password
+              </label>
+              <c-col sm="10">
+                <input cFormControl id="inputPassword3" type="password" />
+              </c-col>
+            </c-row>
+            <fieldset class="row mb-3">
+              <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+              <c-col sm="10">
+                <c-form-check>
+                  <input cFormCheckInput checked id="gridRadios1" name="gridRadios" type="radio" value="option1" />
+                  <label cFormCheckLabel for="gridRadios1">First radio</label>
+                </c-form-check>
+                <c-form-check>
+                  <input cFormCheckInput id="gridRadios2" name="gridRadios" type="radio" value="option2" />
+                  <label cFormCheckLabel for="gridRadios2">Second radio</label>
+                </c-form-check>
+                <c-form-check>
+                  <input cFormCheckInput id="gridRadios3" name="gridRadios" type="radio" value="option3" />
+                  <label cFormCheckLabel for="gridRadios3">Third disabled radio</label>
+                </c-form-check>
+              </c-col>
+            </fieldset>
+            <c-row class="mb-3">
+              <c-col sm="10" class="offset-sm-2">
+                <c-form-check>
+                  <input cFormCheckInput id="gridCheck1" name="gridCheck1" type="checkbox" />
+                  <label cFormCheckLabel for="gridCheck1">Example checkbox</label>
+                </c-form-check>
+              </c-col>
+            </c-row>
+            <button cButton type="submit">Sign in</button>
+          </form>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Layout</strong> <small>Horizontal form label sizing</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Be sure to use <code>.col-form-label-sm</code> or <code>.col-form-label-lg</code> to
+          your <code>&lt;label&gt;</code>s or <code>&lt;legend&gt;</code>s to correctly
+          follow the size of <code>.form-control-lg</code> and <code>.form-control-sm</code>.
+        </p>
+        <app-docs-example href="forms/layout#horizontal-form-label-sizing">
+          <c-row class="mb-3">
+            <label cLabel
+                   class="col-sm-2 col-form-label col-form-label-sm"
+                   for="colFormLabelSm"
+            >
+              Email
+            </label>
+            <c-col sm="10">
+              <input cFormControl
+                     class="form-control form-control-sm"
+                     id="colFormLabelSm"
+                     placeholder="col-form-label-sm"
+                     type="email"
+              />
+            </c-col>
+          </c-row>
+          <c-row class="mb-3">
+            <label cLabel class="col-sm-2 col-form-label" for="colFormLabel">
+              Email
+            </label>
+            <c-col sm="10">
+              <input cFormControl id="colFormLabel" placeholder="col-form-label" type="email" />
+            </c-col>
+          </c-row>
+          <c-row>
+            <label cLabel
+                   class="col-sm-2 col-form-label col-form-label-lg"
+                   for="colFormLabelLg"
+            >
+              Email
+            </label>
+            <c-col sm="10">
+              <input cFormControl
+                     class="form-control form-control-lg"
+                     id="colFormLabelLg"
+                     placeholder="col-form-label-lg"
+                     type="email"
+              />
+            </c-col>
+          </c-row>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Layout</strong> <small>Column sizing</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          As shown in the previous examples, our grid system allows you to place any number of
+          <code>&lt;c-col&gt;</code>s within a <code>&lt;c-row&gt;</code>. They&#39;ll split the
+          available width equally between them. You may also pick a subset of your columns to
+          take up more or less space, while the remaining <code>&lt;c-col&gt;</code>s equally
+          split the rest, with specific column classes like
+          <code>&lt;c-col sm=&#34;7&#34;&gt;</code>.
+        </p>
+        <app-docs-example href="forms/layout#column-sizing">
+          <c-row class="g-3">
+            <c-col sm="7">
+              <input aria-label="City" cFormControl placeholder="City" />
+            </c-col>
+            <c-col sm>
+              <input aria-label="State" cFormControl placeholder="State" />
+            </c-col>
+            <c-col sm>
+              <input aria-label="Zip" cFormControl placeholder="Zip" />
+            </c-col>
+          </c-row>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Layout</strong> <small>Auto-sizing</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          The example below uses a flexbox utility to vertically center the contents and changes
+          <code>&lt;c-col&gt;</code> to <code>&lt;c-col xs=&#34;auto&#34;&gt;</code> so that your
+          columns only take up as much space as needed. Put another way, the column sizes itself
+          based on the contents.
+        </p>
+        <app-docs-example href="forms/layout#auto-sizing">
+          <form cForm class="row gy-2 gx-3 align-items-center">
+            <c-col xs="auto">
+              <label cLabel class="visually-hidden" for="autoSizingInput">
+                Name
+              </label>
+              <input cFormControl id="autoSizingInput" placeholder="Jane Doe" />
+            </c-col>
+            <c-col xs="auto">
+              <label cLabel class="visually-hidden" for="autoSizingInputGroup">
+                Username
+              </label>
+              <c-input-group>
+                <span cInputGroupText>@</span>
+                <input cFormControl id="autoSizingInputGroup" placeholder="Username" />
+              </c-input-group>
+            </c-col>
+            <c-col xs="auto">
+              <label cLabel class="visually-hidden" for="autoSizingSelect">
+                Preference
+              </label>
+              <select cSelect id="autoSizingSelect">
+                <option>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </c-col>
+            <c-col xs="auto">
+              <c-form-check>
+                <input cFormCheckInput id="autoSizingCheck" name="autoSizingCheck" type="checkbox" />
+                <label cFormCheckLabel for="autoSizingCheck">Remember me</label>
+              </c-form-check>
+            </c-col>
+            <c-col xs="auto">
+              <button cButton type="submit">Submit</button>
+            </c-col>
+          </form>
+        </app-docs-example>
+        <p class="text-medium-emphasis small">
+          You can then remix that once again with size-specific column classes.
+        </p>
+        <app-docs-example href="forms/layout#auto-sizing">
+          <form cForm class="row gx-3 gy-2 align-items-center">
+            <c-col sm="3">
+              <label cLabel class="visually-hidden" for="specificSizeInputName">
+                Name
+              </label>
+              <input cFormControl id="specificSizeInputName" placeholder="Jane Doe" />
+            </c-col>
+            <c-col sm="3">
+              <label cLabel class="visually-hidden" for="specificSizeInputGroupUsername">
+                Username
+              </label>
+              <c-input-group>
+                <span cInputGroupText>@</span>
+                <input cFormControl id="specificSizeInputGroupUsername" placeholder="Username" />
+              </c-input-group>
+            </c-col>
+            <c-col sm="3">
+              <label cLabel class="visually-hidden" for="specificSizeSelect">
+                Preference
+              </label>
+              <select cSelect id="specificSizeSelect">
+                <option>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </c-col>
+            <c-col xs="auto">
+              <c-form-check>
+                <input cFormCheckInput id="autoSizingCheck2" name="autoSizingCheck2" type="checkbox" />
+                <label cFormCheckLabel for="autoSizingCheck2">Remember me</label>
+              </c-form-check>
+            </c-col>
+            <c-col xs="auto">
+              <button cButton type="submit">Submit</button>
+            </c-col>
+          </form>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Layout</strong> <small>Inline forms</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Use the <code>&lt;c-col xs=&#34;auto&#34;&gt;</code> class to create horizontal
+          layouts. By adding
+          <a href="https://coreui.io/docs/layout/gutters/">gutter modifier classes</a>, we will
+          have gutters in horizontal and vertical directions. The
+          <code>.align-items-center</code> aligns the form elements to the middle, making the
+          <code>&lt;CFormCheck&gt;</code> align properly.
+        </p>
+        <app-docs-example href="forms/layout#inline-forms">
+          <form cForm class="row row-cols-lg-auto g-3 align-items-center">
+            <c-col xs="12">
+              <label cLabel class="visually-hidden" for="inlineFormInputGroupUsername">
+                Username
+              </label>
+              <c-input-group>
+                <span cInputGroupText>@</span>
+                <input cFormControl id="inlineFormInputGroupUsername" placeholder="Username" />
+              </c-input-group>
+            </c-col>
+            <c-col xs="12">
+              <label cLabel class="visually-hidden" for="inlineFormSelectPref">
+                Preference
+              </label>
+              <select cSelect id="inlineFormSelectPref">
+                <option>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </c-col>
+            <c-col xs="12">
+              <c-form-check inline>
+                <input cFormCheckInput id="inlineFormCheck" name="inlineFormCheck" type="checkbox" />
+                <label cFormCheckLabel for="inlineFormCheck">Remember me</label>
+              </c-form-check>
+            </c-col>
+            <c-col xs="12">
+              <button cButton type="submit">Submit</button>
+            </c-col>
+          </form>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row> -->
+
+<c-row>
+  <c-col xs="12">
+    <c-callout class="bg-white:dark:bg-transparent" color="info">
+      <ng-container *ngTemplateOutlet="default"></ng-container>
+    </c-callout>
+
+    <ng-template #default>
+      <div class="row">
+        <div class="col">
+          <ng-container *ngTemplateOutlet="liveDemo1"></ng-container>
+        </div>
+        <div class="col">
+          <ng-container *ngTemplateOutlet="liveDemo2"></ng-container>
+        </div>
+        <div class="col">
+          <ng-container *ngTemplateOutlet="liveDemo3"></ng-container>
+        </div>
+        <div class="col">
+          <ng-container *ngTemplateOutlet="liveDemo4"></ng-container>
+        </div>
+        <div class="col">
+          <ng-container *ngTemplateOutlet="liveDemo5"></ng-container>
+        </div>
+      </div>
+    </ng-template>
+
+  </c-col>
+</c-row>
+<c-row>
+  <c-col xs="4" lg="6">
+    <c-card class="mb-4">
+      <c-card-header>
+        <c-row>
+          <c-col>
+            Niveau Parcours
+          </c-col>
+          <c-col>
+            <div class="search-one">
+              <i class="bi bi-search sear"></i>
+              <input id="search" class="reche" type="search" placeholder="Rechercher..." [(ngModel)]="searchText1" autofocus required />
+              <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
+            </div>
+          </c-col>
+        </c-row>
+      </c-card-header>
+      <c-card-body>
+        <table cTable>
+          <thead style="text-align: center;">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Niveau Parcours</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody style="text-align: center;"
+            *ngFor="let Niveauparcours of niveauparcours| filter:searchText1| paginate:{itemsPerPage :4, currentPage:p1, id: 'niveau-pagination'}, let i = index ">
+            <tr>
+              <th scope="row">{{i+1}}</th>
+              <td>{{Niveauparcours.nomniveau}}</td>
+              <td><div class="lesiconscrud">
+                <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerNiveauParcours(Niveauparcours.id)" title="Supprimer"><i class="bi bi-trash3"></i></a>
+              </div></td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p1 = $event" previousLabel="Précédent" nextLabel="Suivant"
+          class="pagination" id="niveau-pagination"></pagination-controls>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="4" lg="6">
+    <c-card class="mb-4">
+      <c-card-header>
+        <c-row>
+          <c-col>
+            Types de questions
+          </c-col>
+          <c-col>
+            <div class="search-one">
+              <i class="bi bi-search sear"></i>
+              <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText2" autofocus required />
+              <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
+            </div>
+          </c-col>
+        </c-row>
+      </c-card-header>
+      <c-card-body>
+        <table cTable>
+          <thead style="text-align: center;">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Type de questions</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody style="text-align: center;"
+            *ngFor="let Typequestion of typequestion | filter:searchText2| paginate:{itemsPerPage :4, currentPage:p2, id: 'question-pagination'} , let i = index ">
+            <tr>
+              <th scope="row">{{i+1}}</th>
+              <td>{{Typequestion.nomtypequestion}}</td>
+              <td><div class="lesiconscrud">
+                <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerTypeQuestion(Typequestion.id)" title="Supprimer"><i class="bi bi-trash3"></i></a>
+              </div></td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p2 = $event" previousLabel="Précédent" nextLabel="Suivant"
+          class="pagination" id="question-pagination"></pagination-controls>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="4" lg="6">
+    <c-row>
+      <c-col xs>
+        <c-card class="mb-4">
+          <c-card-header>
+            <c-row>
+              <c-col>
+                Type de matières
+              </c-col>
+              <c-col>
+                <div class="search-one">
+                  <i class="bi bi-search sear"></i>
+                  <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText3" autofocus required />
+                  <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
+                </div>
+              </c-col>
+            </c-row>
+            
+          </c-card-header>
+          <c-card-body>
+            <table cTable>
+              <thead style="text-align: center;">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Type de matières</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody style="text-align: center;"
+                *ngFor="let Typematiere of typematiere  | filter:searchText3 | paginate:{itemsPerPage :4, currentPage:p3, id: 'matiere-pagination'}, let i = index ">
+                <tr>
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{Typematiere.nomtypematiere}}</td>
+                  <td><div class="lesiconscrud">
+                    <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                    <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerTypeMatiere(Typematiere.id)" title="Supprimer"><i class="bi bi-trash3"></i></a>
+                  </div></td>
+                </tr>
+              </tbody>
+            </table>
+            <pagination-controls (pageChange)="p3 = $event" previousLabel="Précédent" nextLabel="Suivant"
+              class="pagination" id="matiere-pagination"></pagination-controls>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </c-col>
+  <c-col xs="4" lg="6">
+    <c-row>
+      <c-col xs>
+        <c-card class="mb-4">
+          <c-card-header>
+            <c-row>
+              <c-col>
+                Les séries du lycée
+              </c-col>
+              <c-col>
+                <div class="search-one">
+                  <i class="bi bi-search sear"></i>
+                  <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText4" autofocus required />
+                  <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
+                </div>
+              </c-col>
+            </c-row>
+            
+          </c-card-header>
+          <c-card-body>
+            <table cTable>
+              <thead style="text-align: center;">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nom de la série</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody style="text-align: center;"
+                *ngFor="let Serielycee of serielycee | filter:searchText4| paginate:{itemsPerPage :4, currentPage:p4, id: 'serie-pagination'}, let i = index ">
+                <tr>
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{Serielycee.nomserie}}</td>
+                  <td><div class="lesiconscrud">
+                    <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                    <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerSerie(Serielycee.id)" title="Supprimer"><i class="bi bi-trash3"></i></a>
+                  </div></td>
+                </tr>
+              </tbody>
+            </table>
+            <pagination-controls (pageChange)="p4 = $event" previousLabel="Précédent" nextLabel="Suivant"
+              class="pagination" id="serie-pagination"></pagination-controls>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </c-col>
+  <c-col xs="4" lg="6">
+    <c-row>
+      <c-col xs>
+        <c-card class="mb-4">
+          <c-card-header>
+            <c-row>
+              <c-col>
+                Les domaines du professionnel
+              </c-col>
+              <c-col>
+                <div class="search-one">
+                  <i class="bi bi-search sear"></i>
+                  <input class="reche" id="search" type="search" placeholder="Rechercher..." [(ngModel)]="searchText5" autofocus required />
+                  <!-- <ion-input type="text" placeholder="Rechercher séries" [(ngModel)]="searchText"></ion-input> -->
+                </div>
+              </c-col>
+            </c-row>
+            
+          </c-card-header>
+          <c-card-body>
+            <table cTable>
+              <thead style="text-align: center;">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nom du domaine</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody style="text-align: center;"
+                *ngFor="let Domaineprof of domaineprof | filter:searchText5 | paginate:{itemsPerPage :4, currentPage:p5, id: 'domaine-pagination'}, let i = index ">
+                <tr>
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{Domaineprof.nomdomaine}}</td>
+                  <td><div class="lesiconscrud">
+                    <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                    <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerDomaine(Domaineprof.id)" title="Supprimer"><i class="bi bi-trash3"></i></a>
+                  </div></td>
+                </tr>
+              </tbody>
+            </table>
+            <pagination-controls (pageChange)="p5 = $event" previousLabel="Précédent" nextLabel="Suivant"
+              class="pagination" id="domaine-pagination"></pagination-controls>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </c-col>
+</c-row>
+
+<!-- POPUP AJOUTER NIVEAU PARCOURS -->
+<ng-template #liveDemo1>
+  <button (click)="toggleLiveDemo1()" type="button" class="btn btnnn">Ajouter Niveau Parcours</button>
+  <!-- <button (click)="toggleLiveDemo1()" cButton>Ajouter Niveau Parcours</button> -->
+  <c-modal id="liveDemoModal" [visible]="liveDemoVisible1" (visibleChange)="handleLiveDemoChange1($event)">
+    <c-modal-header>
+      <h5 cModalTitle>Ajouter Niveau Parcours</h5>
+      <button (click)="toggleLiveDemo1()" cButtonClose></button>
+    </c-modal-header>
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && AjouterNiveauParcours()" #f="ngForm" novalidate>
+      <c-modal-body>
+        <div class="form-floating mb-3">
+          <input name="nomniveau" [(ngModel)]="form.nomniveau" required minlength="3" maxlength="20"
+            #nomniveau="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nomniveau.errors }" class="form-control"
+            id="floatingInput" placeholder="Nom du niveau">
+          <div style="text-align: center;" class="invalid-feedback" *ngIf="nomniveau.errors && f.submitted">
+            <div *ngIf="nomniveau.errors['required']">Nom niveau obligatoires</div>
+            <div *ngIf="nomniveau.errors['minlength']">
+              Nom niveau doit avoir au moins 3 caractères
+            </div>
+            <div *ngIf="nomniveau.errors['maxlength']">
+              Nom niveau doit comporter au maximum 20 caractères
+            </div>
+          </div>
+          <label for="floatingInput">Nom du niveau</label>
+        </div>
+        
+      </c-modal-body>
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Création annulée !<br />{{ errorMessage }}
+      </div>
+      <c-modal-footer>
+        <button (click)="toggleLiveDemo1()" cButton color="secondary">
+          Retour
+        </button>
+        <button (click)="AjouterNiveauParcours()" class="btnnn">Enregistrer</button>
+        
+      </c-modal-footer>
+    </form>
+  </c-modal>
+</ng-template>
+
+<!-- PARTIE AJOUTER -->
+
+<!-- POPUP AJOUTER TYPE QUESTION -->
+<ng-template #liveDemo2>
+  <button (click)="toggleLiveDemo2()" type="button" class="btn btnnn">Ajouter Type Question</button>
+  <!-- <button (click)="toggleLiveDemo2()" cButton>Ajouter Type Question</button> -->
+  <c-modal id="liveDemoModal" [visible]="liveDemoVisible2" (visibleChange)="handleLiveDemoChange2($event)">
+    <c-modal-header>
+      <h5 cModalTitle>Ajouter Type Question</h5>
+      <button (click)="toggleLiveDemo2()" cButtonClose></button>
+    </c-modal-header>
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && AjouterTypeQuestion()" #f="ngForm" novalidate>
+      <c-modal-body>
+        <div class="form-floating mb-3">
+          <input name="nomtypequestion" [(ngModel)]="formquestion.nomtypequestion" required minlength="3" maxlength="20"
+            #nomtypequestion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nomtypequestion.errors }"
+            class="form-control" id="floatingInput" placeholder="Type question">
+          <div style="text-align: center;" class="invalid-feedback" *ngIf="nomtypequestion.errors && f.submitted">
+            <div *ngIf="nomtypequestion.errors['required']">Type question obligatoires</div>
+            <div *ngIf="nomtypequestion.errors['minlength']">
+              Type question doit avoir au moins 3 caractères
+            </div>
+            <div *ngIf="nomtypequestion.errors['maxlength']">
+              Type question doit comporter au maximum 20 caractères
+            </div>
+          </div>
+          <!-- <input type="email" class="form-control" id="floatingInput" placeholder="Type question"> -->
+          <label for="floatingInput">Type question</label>
+        </div>
+        
+      </c-modal-body>
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Création annulée !<br />{{ errorMessage }}
+      </div>
+      <c-modal-footer>
+        <button (click)="toggleLiveDemo2()" cButton color="secondary">
+          Retour
+        </button>
+        <button (click)="AjouterTypeQuestion()" class="btnnn">Enregistrer</button>
+
+      </c-modal-footer>
+    </form>
+  </c-modal>
+</ng-template>
+
+<!-- POPUP AJOUTER TYPE MATIERE -->
+<ng-template #liveDemo3>
+  <button (click)="toggleLiveDemo3()" type="button" class="btn btnnn">Ajouter Type Matière</button>
+  <!-- <button (click)="toggleLiveDemo3()" cButton>Ajouter Type Matière</button> -->
+  <c-modal id="liveDemoModal" [visible]="liveDemoVisible3" (visibleChange)="handleLiveDemoChange3($event)">
+    <c-modal-header>
+      <h5 cModalTitle>Ajouter Type Matière</h5>
+      <button (click)="toggleLiveDemo3()" cButtonClose></button>
+    </c-modal-header>
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && AjouterTypeMatiere()" #f="ngForm" novalidate>
+      <c-modal-body>
+        <div class="form-floating mb-3">
+          <input name="nomtypematiere" [(ngModel)]="formmatiere.nomtypematiere" required minlength="3" maxlength="20"
+          #nomtypematiere="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nomtypematiere.errors }"
+          class="form-control" id="floatingInput" placeholder="Type matière">
+          <div style="text-align: center;" class="invalid-feedback" *ngIf="nomtypematiere.errors && f.submitted">
+            <div *ngIf="nomtypematiere.errors['required']">Type matière obligatoires</div>
+            <div *ngIf="nomtypematiere.errors['minlength']">
+              Type matière doit avoir au moins 3 caractères
+            </div>
+            <div *ngIf="nomtypematiere.errors['maxlength']">
+              Type matière doit comporter au maximum 20 caractères
+            </div>
+          </div>
+          <label for="floatingInput">Type matière</label>
+        </div>
+      </c-modal-body>
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Création annulée !<br />{{ errorMessage }}
+      </div>
+      <c-modal-footer>
+        <button (click)="toggleLiveDemo3()" cButton color="secondary">
+          Retour
+        </button>
+        <button (click)="AjouterTypeMatiere()" class="btnnn">Enregistrer</button>
+      </c-modal-footer>
+    </form>
+  </c-modal>
+</ng-template>
+
+<!-- POPUP AJOUTER SERIE -->
+<ng-template #liveDemo4>
+  <button (click)="toggleLiveDemo4()" type="button" class="btn btnnn">Ajouter Série Lycée</button>
+  <!-- <button (click)="toggleLiveDemo4()" cButton>Ajouter Série Lycée</button> -->
+  <c-modal id="liveDemoModal" [visible]="liveDemoVisible4" (visibleChange)="handleLiveDemoChange4($event)">
+    <c-modal-header>
+      <h5 cModalTitle>Ajouter Série Lycée</h5>
+      <button (click)="toggleLiveDemo4()" cButtonClose></button>
+    </c-modal-header>
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && AjouterSerieLycee()" #f="ngForm" novalidate>
+      <c-modal-body>
+        <div class="form-floating mb-3">
+          <input name="nomserie" [(ngModel)]="formserie.nomserie" required minlength="3" maxlength="20"
+          #nomserie="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nomserie.errors }" class="form-control"
+          id="floatingInput" placeholder="Nom série">
+          <div style="text-align: center;" class="invalid-feedback" *ngIf="nomserie.errors && f.submitted">
+            <div *ngIf="nomserie.errors['required']">Série obligatoires</div>
+            <div *ngIf="nomserie.errors['minlength']">
+              Série doit avoir au moins 3 caractères
+            </div>
+            <div *ngIf="nomserie.errors['maxlength']">
+              Série doit comporter au maximum 20 caractères
+            </div>
+          </div>
+          <label for="floatingInput">Nom série</label>
+        </div>
+      </c-modal-body>
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Création annulée !<br />{{ errorMessage }}
+      </div>
+      <c-modal-footer>
+        <button (click)="toggleLiveDemo4()" cButton color="secondary">
+          Retour
+        </button>
+        <button (click)="AjouterSerieLycee()" class="btnnn">Enregistrer</button>
+      </c-modal-footer>
+    </form>
+  </c-modal>
+</ng-template>
+
+<!-- POPUP AJOUTER SERIE -->
+<ng-template #liveDemo5>
+  <button (click)="toggleLiveDemo5()" type="button" class="btn btnnn">Ajouter Domaine prof</button>
+  <!-- <button (click)="toggleLiveDemo5()" cButton>Ajouter Domaine prof</button> -->
+  <c-modal id="liveDemoModal" [visible]="liveDemoVisible5" (visibleChange)="handleLiveDemoChange5($event)">
+    <c-modal-header>
+      <h5 cModalTitle>Ajouter Domaine prof</h5>
+      <button (click)="toggleLiveDemo5()" cButtonClose></button>
+    </c-modal-header>
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && AjouterDomaine()" #f="ngForm" novalidate>
+      <c-modal-body>
+        <div class="form-floating mb-3">
+          <input name="nomdomaine" [(ngModel)]="formdomaine.nomdomaine" required minlength="3" maxlength="20"
+          #nomdomaine="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nomdomaine.errors }" class="form-control"
+          id="floatingInput" placeholder="Nom Domaine">
+          <div style="text-align: center;" class="invalid-feedback" *ngIf="nomdomaine.errors && f.submitted">
+            <div *ngIf="nomdomaine.errors['required']">Domaine obligatoires</div>
+            <div *ngIf="nomdomaine.errors['minlength']">
+              Domaine doit avoir au moins 3 caractères
+            </div>
+            <div *ngIf="nomdomaine.errors['maxlength']">
+              Domaine doit comporter au maximum 20 caractères
+            </div>
+          </div>
+          <label for="floatingInput">Nom Domaine</label>
+        </div>
+      </c-modal-body>
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Création annulée !<br />{{ errorMessage }}
+      </div>
+      <c-modal-footer>
+        <button (click)="toggleLiveDemo5()" cButton color="secondary">
+          Retour
+        </button>
+        <button (click)="AjouterDomaine()" class="btnnn">Enregistrer</button>
+      </c-modal-footer>
+    </form>
+  </c-modal>
+</ng-template>
+
+<!-- FIN AJOUTER -->

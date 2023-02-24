@@ -1,0 +1,258 @@
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <c-callout class="bg-white:dark:bg-transparent" color="info" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url({{image}}parcours/{{parcours.imageparcours}}); object-fit: fill !important; width: 100%; height: 350px;">
+      <ng-container *ngTemplateOutlet="default"></ng-container>
+    </c-callout>
+    
+    <ng-template #default>
+      <div class="row" style="color: white; margin-top: 10%; ">
+        <div class="col">
+          <h3 style="text-align: center;font-size: 35px;"><b> Nom parcours :</b> {{parcours.nomparcours}}</h3>
+        </div>
+        <div class="col">
+          <h3 style="text-align: center; font-size: 35px;"><b> Niveau :</b> {{parcours.niveauparcours.nomniveau}}</h3>
+        </div>
+      </div>
+    </ng-template>
+  </c-col>
+  <!-- <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header (click)="toggleCollapse(0)">
+        <strong>Description</strong>
+      </c-card-header>
+      <c-card-body>
+          <div [visible]="collapses[0]" cCollapse>
+            <c-card class="shadow mt-3">
+              <c-card-body>
+                {{parcours.description}}
+              </c-card-body>
+            </c-card>
+          </div>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+        <strong>Angular Collapse</strong> <small>horizontal</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          Add the <code>horizontal</code> property to transition the width
+          instead of height and set a width on the immediate child element.
+        </p>
+        <app-docs-example href="components/collapse">
+          <button
+            (click)="toggleCollapse(1)"
+            cButton
+            class="me-1 mb-3"
+            color="primary"
+            [attr.aria-expanded]="collapses[1]"
+          >
+            Button
+          </button>
+          <div style="min-height: 130px">
+            <div
+              [visible]="collapses[1]"
+              cCollapse
+              horizontal
+              style="max-width: 260px"
+            >
+              <c-card class="shadow">
+                <c-card-body style="width: 260px">
+                  This is some placeholder content for a horizontal collapse.
+                  It's hidden by default and shown when triggered.
+                </c-card-body>
+              </c-card>
+            </div>
+          </div>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Angular Collapse</strong> <small> multi target</small>
+      </c-card-header>
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          A <code>&lt;c-button&gt;</code> can show and hide multiple elements.
+        </p>
+        <app-docs-example href="components/collapse#multiple-targets">
+          <button
+            (click)="toggleCollapse(2)"
+            cButton
+            class="me-1"
+            color="primary"
+          >
+            Toggle first element
+          </button>
+          <button
+            (click)="toggleCollapse(3)"
+            cButton
+            class="me-1"
+            color="primary"
+          >
+            Toggle second element
+          </button>
+          <button
+            (click)="toggleCollapse(2); toggleCollapse(3)"
+            cButton
+            class="me-1"
+            color="primary"
+          >
+            Toggle both
+          </button>
+          <c-row style="min-height: 130px">
+            <c-col xs="6">
+              <div [visible]="collapses[2]" cCollapse>
+                <c-card class="mt-3">
+                  <c-card-body>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. Nihil anim keffiyeh
+                    helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident.
+                  </c-card-body>
+                </c-card>
+              </div>
+            </c-col>
+            <c-col xs="6">
+              <div [visible]="collapses[3]" cCollapse>
+                <c-card class="mt-3">
+                  <c-card-body>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. Nihil anim keffiyeh
+                    helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident.
+                  </c-card-body>
+                </c-card>
+              </div>
+            </c-col>
+          </c-row>
+        </app-docs-example>
+      </c-card-body>
+    </c-card>
+  </c-col> -->
+</c-row>
+
+<!-- <c-row>
+  <img src="{{image}}parcours/{{parcours.imageparcours}}" alt="">
+</c-row> -->
+
+<c-row>
+  <c-col>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header (click)="toggleCollapse(0)">
+          <strong>Titre</strong>
+        </c-card-header>
+        <c-card-body>
+            <!-- <div [visible]="collapses[0]" cCollapse> -->
+              <c-card class="shadow mt-3">
+                <c-card-body>
+                  {{parcours.titre}}
+                </c-card-body>
+              </c-card>
+            <!-- </div> -->
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-col>
+  <c-col>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header (click)="toggleCollapse(1)">
+          <strong>Type</strong>
+        </c-card-header>
+        <c-card-body>
+            <!-- <div [visible]="collapses[1]" cCollapse> -->
+              <c-card class="shadow mt-3">
+                <c-card-body>
+                  {{parcours.type}}
+                </c-card-body>
+              </c-card>
+            <!-- </div> -->
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-col>
+</c-row>
+
+<c-row>
+  <c-col>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header (click)="toggleCollapse(2)">
+          <strong>Durée</strong>
+        </c-card-header>
+        <c-card-body>
+            <!-- <div [visible]="collapses[2]" cCollapse> -->
+              <c-card class="shadow mt-3">
+                <c-card-body>
+                  {{parcours.duree}}
+                </c-card-body>
+              </c-card>
+            <!-- </div> -->
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-col>
+  <c-col>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header (click)="toggleCollapse(3)">
+          <strong>Admission</strong>
+        </c-card-header>
+        <c-card-body>
+            <!-- <div [visible]="collapses[3]" cCollapse> -->
+              <c-card class="shadow mt-3">
+                <c-card-body>
+                  {{parcours.admission}}
+                </c-card-body>
+              </c-card>
+            <!-- </div> -->
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-col>
+</c-row>
+
+<c-row>
+  <c-col>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header (click)="toggleCollapse(4)">
+          <strong>Description</strong>
+        </c-card-header>
+        <c-card-body>
+            <!-- <div [visible]="collapses[4]" cCollapse> -->
+              <c-card class="shadow mt-3">
+                <c-card-body>
+                  {{parcours.description}}
+                </c-card-body>
+              </c-card>
+            <!-- </div> -->
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-col>
+  <c-col>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header (click)="toggleCollapse(5)">
+          <strong>Conseil</strong>
+        </c-card-header>
+        <c-card-body>
+            <!-- <div [visible]="collapses[5]" cCollapse> -->
+              <c-card class="shadow mt-3">
+                <c-card-body>
+                  {{parcours.conseil}}
+                </c-card-body>
+              </c-card>
+            <!-- </div> -->
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-col>
+</c-row>
