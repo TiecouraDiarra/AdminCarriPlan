@@ -91,7 +91,8 @@ export class SelectComponent implements OnInit {
             swalWithBootstrapButtons.fire(
               'Question ajoutée avec succes!',
               'Vous êtes diriger vers la liste des questions.',
-              'success',)
+              'success',);
+              location.reload();
           })
         } else if (
           /* Read more about handling dismissals below */
@@ -132,6 +133,7 @@ export class SelectComponent implements OnInit {
             'Question supprimée avec succes!',
             'success',)
           // this.route.navigateByUrl("/base/cards")
+          location.reload();
         })
 
       } else if (

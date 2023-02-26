@@ -163,6 +163,7 @@ export class LayoutComponent implements OnInit {
 
     this.serviceNiveauParcours.AjouterNiveauParcours(nomniveau).subscribe({
       next: data => {
+        
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
@@ -192,7 +193,8 @@ export class LayoutComponent implements OnInit {
       if (result.isConfirmed) {
         this.route.navigateByUrl('/forms/layout', { skipLocationChange: true }).then(() => {
           this.route.navigate(["/forms/layout"])
-        })
+        });
+        location.reload();
       }
     })
 
@@ -233,7 +235,8 @@ export class LayoutComponent implements OnInit {
       if (result.isConfirmed) {
         this.route.navigateByUrl('/forms/layout', { skipLocationChange: true }).then(() => {
           this.route.navigate(["/forms/layout"])
-        })
+        });
+        location.reload();
       }
     })
 
@@ -274,7 +277,8 @@ export class LayoutComponent implements OnInit {
       if (result.isConfirmed) {
         this.route.navigateByUrl('/forms/layout', { skipLocationChange: true }).then(() => {
           this.route.navigate(["/forms/layout"])
-        })
+        });
+        location.reload();
       }
     })
 
@@ -315,7 +319,8 @@ export class LayoutComponent implements OnInit {
       if (result.isConfirmed) {
         this.route.navigateByUrl('/forms/layout', { skipLocationChange: true }).then(() => {
           this.route.navigate(["/forms/layout"])
-        })
+        });
+        location.reload();
       }
     })
 
@@ -356,7 +361,8 @@ export class LayoutComponent implements OnInit {
       if (result.isConfirmed) {
         this.route.navigateByUrl('/forms/layout', { skipLocationChange: true }).then(() => {
           this.route.navigate(["/forms/layout"])
-        })
+        });
+        location.reload();
       }
     })
 
@@ -388,7 +394,8 @@ export class LayoutComponent implements OnInit {
             'success',)
           this.route.navigateByUrl("/forms/layout")
 
-        })
+        });
+        location.reload();
 
       } else if (
         /* Read more about handling dismissals below */
@@ -428,7 +435,8 @@ export class LayoutComponent implements OnInit {
           swalWithBootstrapButtons.fire(
             'Type question supprimé avec succes!',
             'success',)
-        })
+        });
+        location.reload();
 
       } else if (
         /* Read more about handling dismissals below */
@@ -468,7 +476,8 @@ export class LayoutComponent implements OnInit {
           swalWithBootstrapButtons.fire(
             'Type de matière supprimé avec succes!',
             'success',)
-        })
+        });
+        location.reload();
 
       } else if (
         /* Read more about handling dismissals below */
@@ -508,7 +517,8 @@ export class LayoutComponent implements OnInit {
           swalWithBootstrapButtons.fire(
             'Série supprimée avec succes!',
             'success',)
-        })
+        });
+        location.reload();
 
       } else if (
         /* Read more about handling dismissals below */
@@ -548,7 +558,8 @@ export class LayoutComponent implements OnInit {
           swalWithBootstrapButtons.fire(
             'Domaine supprimé avec succes!',
             'success',)
-        })
+        });
+        location.reload();
 
       } else if (
         /* Read more about handling dismissals below */

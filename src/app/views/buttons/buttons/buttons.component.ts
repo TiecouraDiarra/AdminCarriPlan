@@ -101,7 +101,8 @@ export class ButtonsComponent implements OnInit {
               swalWithBootstrapButtons.fire(
                 'Métier ajouté avec succes!',
                 'Vous êtes diriger vers la liste des métiers.',
-                'success',)
+                'success',);
+                location.reload();
             })
         } else if (
           /* Read more about handling dismissals below */
@@ -148,6 +149,7 @@ export class ButtonsComponent implements OnInit {
             'Métier supprimé avec succes!',
             'success',)
           this.route.navigateByUrl("/base/cards")
+          location.reload();
         })
 
       } else if (

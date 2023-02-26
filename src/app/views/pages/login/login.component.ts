@@ -37,11 +37,12 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.storageService.getUser().roles;
-        if(this.roles[0]=="ROLE_ADMIN"){
+        if(this.roles[0]=="ROLE_SUPERADMIN"){
           this.route.navigate(['/dashboard'])
-        }else if(this.roles[0]!="ROLE_ADMIN"){
-          
         }
+        // else if(this.roles[0]!="ROLE_ADMIN"){
+          
+        // }
         // this.reloadPage();
       },
       error: err => {

@@ -49,6 +49,7 @@ export class FloatingLabelsComponent implements OnInit{
               'Utilisateur supprimé avec succes!',
               'success',)
             // this.route.navigateByUrl("/base/cards")
+            location.reload();
           })
   
         } else if (

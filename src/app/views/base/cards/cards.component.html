@@ -71,8 +71,8 @@
           <div class="lesiconscrud">
             <a (click)="goToDettailParcours(Parcours.id)" class="btn btn-outline-primary"
               title="DetailsParcours"><i class="bi bi-eye"></i></a>
-            <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
-            <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerParcours(Parcours.id)" title="Supprimer la region"><i class="bi bi-trash3"></i></a>
+            <!-- <a id="btn-2" class="btn btn-outline-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a> -->
+            <a id="btn-3" class="btn btn-outline-danger" (click)="SupprimerParcours(Parcours.id)" title="Supprimer"><i class="bi bi-trash3"></i></a>
           </div>
         </c-col>
         <!-- <c-col xs="3" *ngFor="let Parcours of parcours | paginate:{itemsPerPage :4, currentPage:p} | filter:searchText">

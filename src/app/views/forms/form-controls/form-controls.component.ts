@@ -60,7 +60,8 @@ export class FormControlsComponent implements OnInit {
           swalWithBootstrapButtons.fire(
             'Autoévaluation supprimée avec succes!',
             'success',)
-          this.route.navigateByUrl("/base/cards")
+          this.route.navigateByUrl("/forms/form-control");
+          location.reload();
         })
 
       } else if (

@@ -130,7 +130,8 @@ export class CardsComponent implements OnInit {
               swalWithBootstrapButtons.fire(
                 'Parcours ajouté avec succes!',
                 'Vous êtes diriger vers la liste des parcours.',
-                'success',)
+                'success',);
+                location.reload();
             })
         } else if (
           /* Read more about handling dismissals below */
@@ -177,7 +178,8 @@ export class CardsComponent implements OnInit {
             'Parcours supprimé avec succes!',
             'success',)
             this.route.navigateByUrl("/base/cards")
-        })
+        });
+        location.reload();
 
       } else if (
         /* Read more about handling dismissals below */
