@@ -7,6 +7,7 @@ import { ParcoursService } from 'src/app/_services/parcours/parcours.service';
 import { MetierService } from 'src/app/_services/metier/metier.service';
 import { AutoevaluationService } from 'src/app/_services/autoevaluation/autoevaluation.service';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 interface IUser {
   name: string;
@@ -38,7 +39,8 @@ export class DashboardComponent implements OnInit {
     private serviceUser: UserService,
     private serviceParcours: ParcoursService,
     private serviceMetier: MetierService,
-    private serviceAuto: AutoevaluationService
+    private serviceAuto: AutoevaluationService,
+    private route: Router
   ) {
   }
 
@@ -46,6 +48,7 @@ export class DashboardComponent implements OnInit {
   nombretotalparcours: number = 0
   nombretotalmetier: number = 0
   autoevaluationrecente: any
+  parcours : any
   image: string = environment.imageUrl
   status: 'success' | undefined
 
@@ -61,6 +64,10 @@ export class DashboardComponent implements OnInit {
       }
     ]
   };
+
+  onItemChange($event: any): void {
+    console.log('Carousel onItemChange', $event);
+  }
 
 
   // chartBarOptions = {
@@ -201,6 +208,12 @@ export class DashboardComponent implements OnInit {
       console.log(this.nombretotalmetier);
     })
 
+    //AFFICHER LA LISTE DES PARCOURS
+    this.serviceParcours.AfficherLaListeParcours().subscribe(data => {
+      this.parcours = data;
+      console.log(this.parcours);
+    })
+
     //AFFICHER LA LISTE DES AUTOEVALUATIONS
     this.serviceAuto.AfficherLaListeQuatreAutoevaluationRecente().subscribe(data => {
       this.autoevaluationrecente = data;
@@ -222,6 +235,11 @@ export class DashboardComponent implements OnInit {
   get randomData() {
     return Math.round(Math.random() * 100);
   }
+    //LA METHODE PERMETTANT DE NAVIGUER VERS LA PAGE DETAIL AUTOEVALUATION
+    goToDettailAuto(id: number) {
+      console.log(id);
+      return this.route.navigate(['forms/validation/', id])
+    }
 }
 
 

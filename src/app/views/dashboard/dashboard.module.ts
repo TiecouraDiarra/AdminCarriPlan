@@ -13,6 +13,7 @@ import {
   ButtonGroupModule,
   ButtonModule,
   CardModule,
+  CarouselModule,
   DropdownModule,
   FormModule,
   GridModule,
@@ -59,7 +60,8 @@ import { DocsComponentsModule } from '@docs-components/docs-components.module';
     SharedModule,
     DocsComponentsModule,
     ProgressModule,
-    ChartjsModule
+    ChartjsModule,
+    CarouselModule
   ],
   declarations: [DashboardComponent]
 })

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/Auth/auth.service';
 import { StorageService } from 'src/app/_services/storage/storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private route: Router,private authService: AuthService, private storageService: StorageService) { }
+  constructor(private route: Router, private authService: AuthService, private storageService: StorageService) { }
 
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
@@ -35,15 +36,26 @@ export class LoginComponent implements OnInit {
         this.storageService.saveUser(data);
 
         this.isLoginFailed = false;
-        this.isLoggedIn = true;
+        
         this.roles = this.storageService.getUser().roles;
-        if(this.roles[0]=="ROLE_SUPERADMIN"){
+        if (this.roles[0] == "ROLE_SUPERADMIN") {
+          this.isLoggedIn = true;
           this.route.navigate(['/dashboard'])
+        } else {
+          // Afficher un message d'erreur pour les utilisateurs qui n'ont pas les droits
+          const errorMsg = "Vous n'avez pas les droits nécessaires pour accéder à cette page";
+          Swal.fire({
+            position: 'center',
+            text: errorMsg,
+            icon: 'error',
+            heightAuto: false,
+            showConfirmButton: true,
+            confirmButtonColor: '#0857b5',
+            showDenyButton: false,
+            showCancelButton: false,
+            allowOutsideClick: false,
+          });
         }
-        // else if(this.roles[0]!="ROLE_ADMIN"){
-          
-        // }
-        // this.reloadPage();
       },
       error: err => {
         this.errorMessage = err.error.message;

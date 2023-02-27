@@ -169,19 +169,15 @@
     <c-row>
       <c-col xs>
         <c-card class="mb-4">
-          <c-card-header>Auto-évaluations récentes</c-card-header>
+          <c-card-header>Les parcours</c-card-header>
           <c-card-body>
-            <table [hover]="true" [responsive]="true" [striped]="true" align="middle" cTable class="mb-0 border">
+            <!-- <table [hover]="true" [responsive]="true" [striped]="true" align="middle" cTable class="mb-0 border">
               <thead cTableColor="light">
                 <tr>
                   <th class="text-center">
                     <svg cIcon name="cilPeople"></svg>
                   </th>
                   <th>Utilisateurs</th>
-                  <!-- <th class="text-center">Country</th>
-                  <th>Usage</th>
-                  <th class="text-center">Payment Method</th>
-                  <th>Activity</th> -->
                 </tr>
               </thead>
               <tbody>
@@ -197,6 +193,79 @@
                       </span>
                     </div>
                   </td>
+                </tr>
+              </tbody>
+            </table> -->
+            <!-- <c-carousel (itemChange)="onItemChange($event)" [interval]="3000" transition="slide" [wrap]="false">
+              <c-carousel-indicators></c-carousel-indicators>
+              <c-carousel-inner>
+                <c-carousel-item *ngFor="let Parcours of parcours">
+                  <img
+                    class="d-block w-100"
+                    loading="lazy"
+                    src="{{image}}parcours/{{Parcours.imageparcours}}"
+                  />
+                  <c-carousel-caption class="d-none d-md-block">
+                    <h3>{{Parcours.nomparcours}}</h3>
+                    <p>{{Parcours.nomparcours}}</p>
+                  </c-carousel-caption>
+                </c-carousel-item>
+              </c-carousel-inner>
+              <c-carousel-control [routerLink]="[]" caption="Previous" direction="prev" i18n-caption></c-carousel-control>
+              <c-carousel-control [routerLink]="[]" caption="Next" direction="next" i18n-caption></c-carousel-control>
+            </c-carousel> -->
+            <div class="carousel-item"  *ngFor="let Parcours of parcours">
+              <img src="{{image}}parcours/{{Parcours.imageparcours}}" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>...</h5>
+                <p>...</p>
+              </div>
+            </div>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </c-col>
+</c-row>
+
+<c-row>
+  <!-- <c-col xs="12" lg="6"> -->
+    <c-row>
+      <c-col xs>
+        <c-card class="mb-4">
+          <c-card-header>Auto-évaluations récentes</c-card-header>
+          <c-card-body>
+            <table [hover]="true" [responsive]="true" [striped]="true" align="middle" cTable class="mb-0 border">
+              <thead cTableColor="light">
+                <tr>
+                  <th class="text-center">
+                    <svg cIcon name="cilPeople"></svg>
+                  </th>
+                  <th>Nom utilisateur</th>
+                  <th>Statut</th>
+                  <th>Action</th>
+                  <!-- <th class="text-center">Country</th>
+                  <th>Usage</th>
+                  <th class="text-center">Payment Method</th>
+                  <th>Activity</th> -->
+                </tr>
+              </thead>
+              <tbody *ngFor="let Autoevaluationrecente of autoevaluationrecente; index as i">
+                <tr>
+                  <td class="text-center">
+                    <c-avatar size="md" src="{{image}}avatar/avatar.png" status=""></c-avatar>
+                  </td>
+                  <td>
+                    <div>{{Autoevaluationrecente.utilisateur.nomcomplet }}</div>
+                    <div class="small text-medium-emphasis text-nowrap">
+                      <span>
+                        Nouveau | Fait le: {{ Autoevaluationrecente.dateauto | date:"dd/MM/yyyy hh'h'mm" }}
+                      </span>
+                    </div>
+                  </td>
+                  <td>{{Autoevaluationrecente.utilisateur.roles[0].name}}</td>
+                  <td><a (click)="goToDettailAuto(Autoevaluationrecente.id)" class="btn btn-outline-primary" title="Details"><i
+                    class="bi bi-eye"></i></a></td>
                   <!-- <td class="text-center">
                     <svg cIcon id="{{ user.country + user.name }}" name="cif{{ user.country }}" size="xl"
                       title="{{ user.country }}"></svg>
@@ -224,15 +293,15 @@
                     <div class="fw-semibold text-nowrap">{{ user.activity }}</div>
                   </td> -->
                 </tr>
+                
               </tbody>
             </table>
           </c-card-body>
         </c-card>
       </c-col>
     </c-row>
-  </c-col>
+  <!-- </c-col> -->
 </c-row>
-
 <!-- <c-row>
   <c-col xs>
     <c-card class="mb-4">

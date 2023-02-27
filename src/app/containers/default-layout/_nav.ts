@@ -19,11 +19,11 @@ export const navItems: INavData[] = [
     url: '/forms/layout',
     iconComponent: { name: 'cilListNumbered' }
   },
-  // {
-  //   name: 'test',
-  //   url: '/base/collapse',
-  //   iconComponent: { name: 'cil-drop' }
-  // },
+  {
+    name: 'test',
+    url: '/base/carousel',
+    iconComponent: { name: 'cil-drop' }
+  },
   // {
   //   name: 'Typography',
   //   url: '/theme/typography',
